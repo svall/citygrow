@@ -1,9 +1,18 @@
+<<<<<<< HEAD
 -- INSERT INTO gardens(name, zipcode, user_id)
 -- VALUES
 --   ('garden1', '10023', 1),
 --   ('garden2', '10019', 1),
 --   ('garden3', '10023', 2),
 --   ('garden4', '10001', 3);
+=======
+  INSERT INTO gardens(name, zipcode, user_id)
+VALUES
+  ('garden1', '10023', 1),
+  ('garden2', '10019', 1),
+  ('garden3', '10023', 2),
+  ('garden4', '10001', 3);
+>>>>>>> master
 
 -- INSERT INTO users(name,age)
 -- VALUES
