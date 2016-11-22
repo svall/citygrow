@@ -1,7 +1,7 @@
 const db = require('../lib/dbConnect');
 
 function getAllGardens(req, res, next) {
-  console.log('**********models/garden.js function getAllGardens');
+  // console.log('**********models/garden.js function getAllGardens');
   db.any('SELECT * FROM gardens;')
   .then((gardens) => {
     res.gardens = gardens;
@@ -10,18 +10,44 @@ function getAllGardens(req, res, next) {
   .catch(error => next(error));
 }
 
-function addMovie(req, res, next) {
-  console.log('models/addmovie');
-  // console.log('*******************'req.body);
+function getOneGarden(req, res, next) {
+  // console.log('models/getGarden');
+  console.log('*******************', req.body);
+  const gID = Number.parseInt(req.params.gardenID);
+    db.one(`SELECT *
+      FROM gardens
+      WHERE id = $1
+      `, gID)
+    .then((gdata) => {
+      // console.log('in model ', movie);
+      res.garden = gdata;
+      next();
+    })
+    .catch(error => next(error));
+  }
 
-  db.none('INSERT INTO currentmovies (title, poster, rating, runtime) VALUES ($1, $2, $3, $4);', [req.body.Title, req.body.Poster, req.body.Rated, req.body.Runtime])
-  .then((movie) => {
-  res.movie = movie;
-  console.log('___________________' + movie);
-  next();
-  })
-  .catch(error => console.log(error));
-}
+// Add new garden: (puppiesapi)
+// function addGarden(req, res, next) {
+//   db.one(`INSERT INTO quadrants (name, zip, size)
+//     VALUES ($/name/, $/zip/, $/size/)
+//     ;`, req.body)
+//   .then(() => {
+//     next();
+//   })
+// }
+
+// function addGarden(req, res, next) {
+//   db.none(`
+//     INSERT INTO gardens (name, zipcode, user_id)
+//     VALUES ($1, $2, $3);`,
+//     [req.body.Title, req.body.Poster, req.body.Rated, req.body.Runtime])
+//   .then((gdata) => {
+//   res.rows = gdata;
+//   console.log('___________________' + gdata);
+//   next();
+//   })
+//   .catch(error => console.log(error));
+// }
 
 function showMovie(req, res, next) {
   db.any(`SELECT * FROM currentmovies WHERE currentmovies.id = $1;`, [req.params.id])
@@ -41,7 +67,9 @@ function deleteMovie(req, res, next) {
 
 module.exports = {
   getAllGardens,
-  addMovie,
-  showMovie,
-  deleteMovie
+  getOneGarden,
+  // addGarden,
+  // addMovie,
+  // showMovie,
+  // deleteMovie
 };
