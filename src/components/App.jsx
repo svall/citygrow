@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import GardenForm from './GardenForm/GardenForm.jsx';
 import GardenList from './GardenList/GardenList.jsx';
 // import GardenListItem from './GardenListItem/GardenListItem.jsx';
+import GardenDisplay from './GardenDisplay/GardenDisplay.jsx';
 // import style from './App.css';
 
 class App extends Component {
@@ -17,7 +18,7 @@ class App extends Component {
 
   changeSelection(num) {
     this.setState({
-      selected: this.state.gardenList[num],
+      selected: this.state.gardens[num],
     });
   }
 
@@ -40,9 +41,15 @@ class App extends Component {
         <h1>CityGrow</h1>
       </header>
       <GardenForm />
+      <h1>**********Garden List************</h1>
       <GardenList
         getAllGardens={this.getAllGardens.bind(this)}
         collection={this.state.gardens}
+        changeSelection={this.changeSelection.bind(this)}
+      />
+      <h1>***********Garden Display***********</h1>
+      <GardenDisplay
+        garden={this.state.selected}
       />
 
       </div>
