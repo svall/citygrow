@@ -11,7 +11,7 @@ class App extends Component {
     return (
       <div>
       <header>
-        <h1>Community Garden</h1>
+        <h1>CityGrow</h1>
       </header>
       <GardenForm />
       <GardenList />
