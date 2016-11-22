@@ -22,7 +22,6 @@ class GardenList extends Component {
   render(){
     return (
       <div className="list-container">
-        {/* render a list of houses based on our props.collection */}
         {this.showGardens(this.props.collection)}
       </div>
     );
