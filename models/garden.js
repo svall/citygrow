@@ -1,9 +1,10 @@
 const db = require('../lib/dbConnect');
 
-function getMyMovies(req, res, next) {
-  db.any('SELECT * FROM currentmovies;')
-  .then((movies) => {
-    res.movies = movies;
+function getAllGardens(req, res, next) {
+  console.log('**********models/garden.js function getAllGardens');
+  db.any('SELECT * FROM gardens;')
+  .then((gardens) => {
+    res.gardens = gardens;
     next();
   })
   .catch(error => next(error));
@@ -39,7 +40,7 @@ function deleteMovie(req, res, next) {
 }
 
 module.exports = {
-  getMyMovies,
+  getAllGardens,
   addMovie,
   showMovie,
   deleteMovie

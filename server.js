@@ -18,5 +18,5 @@ app.listen(port, () => console.log('Server is listening on port', port));
 
 
 
-app.use('/garden', dbRouter);
+app.use('/db/gardens', dbRouter);
 
