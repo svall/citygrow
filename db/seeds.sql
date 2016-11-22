@@ -1,4 +1,4 @@
-INSERT INTO gardens(name, zipcode, user_id)
+  INSERT INTO gardens(name, zipcode, user_id)
 VALUES
   ('garden1', '10023', 1),
   ('garden2', '10019', 1),
