@@ -7522,7 +7522,7 @@
   \**************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";Object.defineProperty(exports,"__esModule",{value:true});var _react=__webpack_require__(/*! react */ 1);var _react2=_interopRequireDefault(_react);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}var GardenForm=function GardenForm(props){return _react2.default.createElement("div",null,_react2.default.createElement("h3",null,"Create A Garden"),_react2.default.createElement("form",null,_react2.default.createElement("input",{type:"text"}),_react2.default.createElement("button",null,"Create!")));};exports.default=GardenForm;
+	"use strict";Object.defineProperty(exports,"__esModule",{value:true});var _react=__webpack_require__(/*! react */ 1);var _react2=_interopRequireDefault(_react);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}var GardenForm=function GardenForm(props){return _react2.default.createElement("div",null,_react2.default.createElement("h3",null,"Create A Garden"),_react2.default.createElement("form",{action:"/save",method:"POST","accept-charset":"utf-8"},_react2.default.createElement("input",{type:"text",name:"name",placeholder:"enter garden name"}),_react2.default.createElement("button",null,"Create!")));};exports.default=GardenForm;
 
 /***/ },
 /* 180 */

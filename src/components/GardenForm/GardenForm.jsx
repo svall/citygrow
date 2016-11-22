@@ -5,8 +5,8 @@ const GardenForm = (props)=> {
 
     <div>
     <h3>Create A Garden</h3>
-      <form>
-        <input type="text"/>
+      <form action="/save" method="POST" accept-charset="utf-8">
+        <input type="text" name="name" placeholder="enter garden name" />
         <button>Create!</button>
       </form>
 
