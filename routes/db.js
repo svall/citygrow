@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
-// const {   } = require('../models/garden');
+const {  getAllGardens } = require('../models/garden');
 
 
-router.get('/', (req, res) => {
+router.get('/', getAllGardens,(req, res) => {
   res.send('**********GARDEN**************');
 });
 

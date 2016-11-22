@@ -10,12 +10,11 @@ class GardenList extends Component {
       <div>
         <h3>Choose from existing gardens: </h3>
       </div>
+        <GardenListItem
+        />
         <GardenListItem />
-        <GardenListItem />
-        <GardenListItem />
-        <GardenListItem />
-        <GardenListItem />
-        <GardenListItem />
+
+
       </div>
     );
   }
