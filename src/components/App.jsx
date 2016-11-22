@@ -6,6 +6,21 @@ import GardenList from './GardenList/GardenList.jsx';
 
 class App extends Component {
 
+  constructor(props) {
+    super();
+    console.log(this);
+    this.state = {
+      gardenList: gardens,
+      selected: gardens[0],
+    };
+  }
+
+  changeSelection(num) {
+    this.setState({
+      selected: this.state.gardenList[num],
+    });
+    // has state and props
+  }
 
   render() {
     return (

@@ -3,19 +3,20 @@ import GardenListItem from '../GardenListItem/GardenListItem.jsx';
 
 class GardenList extends Component {
 
+  showGardens(collection) {
+    return collection.map((house, index) =>
+      <article key={index} onClick={()=>this.props.changeSelection(index)}>
+        <GardenListItem name={name} />
+     </article>
+    );
+  }
+
 
   render(){
     return (
-      <div>
-      <div>
-        <h3>Choose from existing gardens: </h3>
-      </div>
-        <GardenListItem />
-        <GardenListItem />
-        <GardenListItem />
-        <GardenListItem />
-        <GardenListItem />
-        <GardenListItem />
+      <div className="list-container">
+        {/* render a list of houses based on our props.collection */}
+        {this.showGardens(this.props.collection)}
       </div>
     );
   }
