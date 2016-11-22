@@ -21,6 +21,7 @@ class GardenList extends Component {
 
   render(){
     return (
+<<<<<<< HEAD
 
       <div>
       <div>
@@ -30,6 +31,9 @@ class GardenList extends Component {
         <GardenListItem />
        <div className="list-container">
         {/* render a list of houses based on our props.collection */}
+=======
+      <div className="list-container">
+>>>>>>> e038d2a2a2992f42a606b5b74c231439704c751e
         {this.showGardens(this.props.collection)}
 
       </div>
