@@ -1,13 +1,7 @@
 const db = require('../lib/dbConnect');
 
 function getAllGardens(req, res, next) {
-<<<<<<< HEAD
 
-  console.log('**********models/garden.js function getAllGardens');
-
-=======
-  // console.log('**********models/garden.js function getAllGardens');
->>>>>>> 3ad0f9b73be82ae67bb203c15b0284abc8acf3d1
   db.any('SELECT * FROM gardens;')
   .then((gardens) => {
     res.gardens = gardens;
@@ -16,16 +10,7 @@ function getAllGardens(req, res, next) {
   .catch(error => next(error));
 }
 
-<<<<<<< HEAD
-// function addMovie(req, res, next) {
-//   console.log('models/addmovie');
-//   // console.log('*******************'req.body);
 
-//   db.none('INSERT INTO currentmovies (title, poster, rating, runtime) VALUES ($1, $2, $3, $4);', [req.body.Title, req.body.Poster, req.body.Rated, req.body.Runtime])
-//   .then((movie) => {
-//   res.movie = movie;
-//   console.log('___________________' + movie);
-=======
 function getOneGarden(req, res, next) {
   // console.log('models/getGarden');
   console.log('*******************', req.body);
@@ -60,7 +45,7 @@ function getOneGarden(req, res, next) {
 //   .then((gdata) => {
 //   res.rows = gdata;
 //   console.log('___________________' + gdata);
->>>>>>> 3ad0f9b73be82ae67bb203c15b0284abc8acf3d1
+
 //   next();
 //   })
 //   .catch(error => console.log(error));
@@ -84,18 +69,10 @@ function getOneGarden(req, res, next) {
 
 module.exports = {
   getAllGardens,
-<<<<<<< HEAD
-
-  // addMovie,
-  // showMovie,
-  // deleteMovie
-
-
-=======
   getOneGarden,
   // addGarden,
   // addMovie,
   // showMovie,
   // deleteMovie
->>>>>>> 3ad0f9b73be82ae67bb203c15b0284abc8acf3d1
+
 };
