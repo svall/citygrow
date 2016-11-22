@@ -1,0 +1,6 @@
+.list-container {
+  height: 300px;
+  width: 500px;
+  overflow: auto;
+  border: 2px solid black;
+}

@@ -1,7 +1,11 @@
 const db = require('../lib/dbConnect');
 
 function getAllGardens(req, res, next) {
+<<<<<<< HEAD
   console.log('***********************getting all gardens')
+=======
+  console.log('**********models/garden.js function getAllGardens');
+>>>>>>> 6bb9e7a545866dd236dc9d6bf35cb5493f6f4d3a
   db.any('SELECT * FROM gardens;')
   .then((gardens) => {
     res.gardens = gardens;
@@ -41,7 +45,13 @@ function getAllGardens(req, res, next) {
 
 module.exports = {
   getAllGardens,
+<<<<<<< HEAD
   // addMovie,
   // showMovie,
   // deleteMovie
+=======
+  addMovie,
+  showMovie,
+  deleteMovie
+>>>>>>> 6bb9e7a545866dd236dc9d6bf35cb5493f6f4d3a
 };
