@@ -1,4 +1,26 @@
-INSERT INTO currentmovies (Title, Poster, Rating, Runtime)
-VALUES ('Iron Man', 'https://images-na.ssl-images-amazon.com/images/M/MV5BMTczNTI2ODUwOF5BMl5BanBnXkFtZTcwMTU0NTIzMw@@._V1_SX300.jpg', 'PG-13', '126 min'),
-('The Big Lebowski', 'https://images-na.ssl-images-amazon.com/images/M/MV5BZTFjMjBiYzItNzU5YS00MjdiLWJkOTktNDQ3MTE3ZjY2YTY5XkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_SX300.jpg', 'R', '117 min');
+INSERT INTO gardens(name, zipcode, user_id)
+VALUES
+  ('garden1', '10023', 1),
+  ('garden2', '10019', 1),
+  ('garden3', '10023', 2),
+  ('garden4', '10001', 3);
 
+INSERT INTO users(name,age)
+VALUES
+  ('user 1', 50),
+  ('user 2', 30),
+  ('user 3', 21);
+
+INSERT INTO produce(name, description)
+VALUES
+  ('pepper', 'plant during summer'),
+  ('cilantro', 'herbs'),
+  ('tomato', 'testing tomatoes'),
+  ('beets', 'seasonal');
+
+INSERT INTO quadrants(garden_id, produce_id, user_id)
+VALUES
+  (1, 1, 1),
+  (1, 2, 1),
+  (2, 2, 3),
+  (3, 4, 2);
