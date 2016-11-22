@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import "./fardenDisplay.css";
 import GardenListItem from '../GardenListItem/GardenListItem.jsx';
 
 export default class GardenDisplay extends Component{

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import "./GardenList.css";
 import GardenListItem from '../GardenListItem/GardenListItem.jsx';
 
 class GardenList extends Component {
@@ -21,9 +22,21 @@ class GardenList extends Component {
 
   render(){
     return (
-      <div className="list-container">
-        {this.showGardens(this.props.collection)}
-      </div>
+   <div>
+        <div>
+         <h3>Choose from existing gardens: </h3>
+        </div>
+
+        <GardenListItem />
+        <div className="list-container">
+         {this.showGardens(this.props.collection)}
+        </div>
+
+
+
+
+  </div>
+
     );
   }
 
