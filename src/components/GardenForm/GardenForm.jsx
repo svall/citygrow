@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import "./GardenForm.css";
 
 const GardenForm = (props)=> {
     return (
 
-    <div>
+    <div className="header-search-bar">
     <h3>Create A Garden</h3>
       <form>
         <input type="text" name="name" placeholder="enter garden name" onChange={props.updateFormName} />
