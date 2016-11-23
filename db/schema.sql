@@ -28,7 +28,8 @@ CREATE TABLE produce (
 CREATE TABLE users (
   id SERIAL PRIMARY KEY,
   name VARCHAR,
-  age VARCHAR
+  age VARCHAR,
+  password VARCHAR NOT NULL
 );
 
 ALTER TABLE ONLY quadrants
