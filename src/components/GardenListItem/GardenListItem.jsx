@@ -5,7 +5,6 @@ const GardenListItem = props => (
 
     <p>Garden name: {props.name}</p>
     <p>Garden Zipcode: {props.zipcode}</p>
-
   </div>
 
 );
