@@ -2,9 +2,21 @@ const express = require('express');
 const router = express.Router();
 
 const { getAllGardens, getOneGarden, addGarden, getLastGardenId, /*getQuadrants*/ } = require('../models/garden');
+const { createUser, authenticate, logIn } = require('../models/user')
+
+router.post('/users', createUser, (req, res) => {
+  res.json(res.rows);
+});
+
+router.get('/users', authenticate, (req, res) => {
+  res.json('You\'re a valid user');
+});
+
+router.post('/users/login', logIn, (req, res) => {
+  res.json(res.rows);
+});
 
 
-// gets the info for a specific garden
 router.get('/:gardenID', getOneGarden, (req, res) => {
   res.json(res.garden || []);
   // res.rows = res.garden
@@ -18,16 +30,19 @@ router.get('/:gardenID', getOneGarden, (req, res) => {
 // });
 
 // gets all the gardens from the db
+
+
 router.get('/', getAllGardens, (req, res) => {
   res.json(res.gardens || []);
+
+
 });
 
-// adds a new garden to the db (adds name, zipcode, user_id)
-router.post('/', addGarden, getLastGardenId, (req, res) => {
+router.post('/', addGarden, (req, res) => {
   res.json(res.gardens || []);
-  res.id = res.gardenid;
-  // console.log("id for gdn in route" , res.id);
   // console.log(res.gardens);
 });
+
+
 
 module.exports = router;
