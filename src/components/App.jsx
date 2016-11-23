@@ -15,7 +15,17 @@ class App extends Component {
       selected: '',
       name: '',
       zipcode: '',
-      user_id: ''
+      user_id: '',
+      garden_id: '',
+      q1: '',
+      q2: '',
+      q3: '',
+      q4: '',
+      q5: '',
+      q6: '',
+      q7: '',
+      q8: '',
+      q9: ''
     };
   }
 
@@ -32,7 +42,7 @@ class App extends Component {
       this.setState({
         gardens: data
       });
-      console.log('************App.jsx data: ' + data);
+      // console.log('************App.jsx data: ' + data);
     })
     .catch(err => console.log(err));
   }
@@ -41,21 +51,21 @@ class App extends Component {
     this.setState({
       name: e.target.value,
     });
-    console.log(this.state.name);
+    // console.log(this.state.name);
   }
 
   updateFormZip(e) {
     this.setState({
       zipcode: e.target.value,
     });
-    console.log(this.state.zipcode);
+    // console.log(this.state.zipcode);
   }
 
   updateFormId(e) {
     this.setState({
       user_id: e.target.value,
     });
-    console.log(this.state.user_id);
+    // console.log(this.state.user_id);
   }
 
   handleFormSubmit() {
@@ -94,7 +104,11 @@ class App extends Component {
         updateFormZip={event => this.updateFormZip(event)}
         updateFormId={event => this.updateFormId(event)}
         handleFormSubmit={event => this.handleFormSubmit()}
-       />
+        getLastGardenId={event => this.getLastGardenId(event)}
+        updateFormGardenId={event => this.updateFormGardenId(event)}
+        garden_id={this.state.garden_id}
+
+      />
       <h1>**********Garden List************</h1>
       <GardenList
         getAllGardens={this.getAllGardens.bind(this)}
