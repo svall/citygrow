@@ -13,7 +13,7 @@ function getAllGardens(req, res, next) {
 
 function getOneGarden(req, res, next) {
   // console.log('models/getGarden');
-  console.log('*******************', req.body);
+  // console.log('*******************', req.body);
   const gID = Number.parseInt(req.params.gardenID);
     db.one(`SELECT *
       FROM gardens
@@ -29,27 +29,32 @@ function getOneGarden(req, res, next) {
 
 // Add new garden: (puppiesapi)
 function addGarden(req, res, next) {
-  db.none(`INSERT INTO gardens (name, zipcode)
-    VALUES ($/name/, $/zipcode/)
+  db.none(`INSERT INTO gardens (name, zipcode, user_id)
+    VALUES ($/name/, $/zipcode/, $/user_id/)
     ;`, req.body)
   .then(() => {
     next();
   })
 }
 
-// function addGarden(req, res, next) {
-//   db.none(`
-//     INSERT INTO gardens (name, zipcode, user_id)
-//     VALUES ($1, $2, $3);`,
-//     [req.body.Title, req.body.Poster, req.body.Rated, req.body.Runtime])
-//   .then((gdata) => {
-//   res.rows = gdata;
-//   console.log('___________________' + gdata);
+// gets the id of the last garden, adds the id of the garden being built into each quadrant to save it into
+// the quadrants table with the specific garden id it is part od
+function getLastGardenId(req, res, next) {
+  db.one('SELECT max(id) FROM gardens;')
+  .then((data) => {
+    let maxid = Number.parseInt(data.max);
+    res.gardenid = maxid;
+    // console.log('id garden is', maxid);
+      db.none(`
+        INSERT INTO quadrants(garden_id)
+        VALUES($1), ($1), ($1), ($1), ($1), ($1), ($1), ($1), ($1);`, maxid)
+      .then(() => {
+      next();
+      })
+    })
+  .catch(error => next(error));
+}
 
-//   next();
-//   })
-//   .catch(error => console.log(error));
-// }
 
 // function showMovie(req, res, next) {
 //   db.any(`SELECT * FROM currentmovies WHERE currentmovies.id = $1;`, [req.params.id])
@@ -71,8 +76,8 @@ module.exports = {
   getAllGardens,
   getOneGarden,
   addGarden,
+  getLastGardenId,
   // addMovie,
   // showMovie,
   // deleteMovie
-
 };
