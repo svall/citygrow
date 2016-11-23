@@ -9,7 +9,7 @@ CREATE TABLE gardens (
   id SERIAL PRIMARY KEY,
   name VARCHAR NOT NULL,
   zipcode VARCHAR NOT NULL,
-  user_id INT NOT NULL
+  user_id INT
 );
 
 CREATE TABLE quadrants (
