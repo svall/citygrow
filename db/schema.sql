@@ -9,7 +9,7 @@ CREATE TABLE gardens (
   id SERIAL PRIMARY KEY,
   name VARCHAR NOT NULL,
   zipcode VARCHAR NOT NULL,
-  user_id INT NOT NULL
+  user_id INT
 );
 
 CREATE TABLE quadrants (
@@ -28,7 +28,8 @@ CREATE TABLE produce (
 CREATE TABLE users (
   id SERIAL PRIMARY KEY,
   name VARCHAR,
-  age VARCHAR
+  age VARCHAR,
+  password VARCHAR NOT NULL
 );
 
 ALTER TABLE ONLY quadrants
