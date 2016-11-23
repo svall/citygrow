@@ -1,7 +1,7 @@
 const db = require('../lib/dbConnect');
 
 function getAllGardens(req, res, next) {
-  // console.log('**********models/garden.js function getAllGardens');
+
   db.any('SELECT * FROM gardens;')
   .then((gardens) => {
     res.gardens = gardens;
@@ -9,6 +9,7 @@ function getAllGardens(req, res, next) {
   })
   .catch(error => next(error));
 }
+
 
 function getOneGarden(req, res, next) {
   // console.log('models/getGarden');
@@ -44,26 +45,27 @@ function getOneGarden(req, res, next) {
 //   .then((gdata) => {
 //   res.rows = gdata;
 //   console.log('___________________' + gdata);
+
 //   next();
 //   })
 //   .catch(error => console.log(error));
 // }
 
-function showMovie(req, res, next) {
-  db.any(`SELECT * FROM currentmovies WHERE currentmovies.id = $1;`, [req.params.id])
-  .then((movie) => {
-    res.movie = movie;
-    console.log('****************models/showMovie');
-    next();
-  })
-  .catch(error => console.log(error));
-}
+// function showMovie(req, res, next) {
+//   db.any(`SELECT * FROM currentmovies WHERE currentmovies.id = $1;`, [req.params.id])
+//   .then((movie) => {
+//     res.movie = movie;
+//     console.log('****************models/showMovie');
+//     next();
+//   })
+//   .catch(error => console.log(error));
+// }
 
-function deleteMovie(req, res, next) {
-  db.none(`DELETE FROM currentmovies WHERE id = $1;`, [req.params.id])
-    .then(next())
-    .catch(err => next(err));
-}
+// function deleteMovie(req, res, next) {
+//   db.none(`DELETE FROM currentmovies WHERE id = $1;`, [req.params.id])
+//     .then(next())
+//     .catch(err => next(err));
+// }
 
 module.exports = {
   getAllGardens,
@@ -72,4 +74,5 @@ module.exports = {
   // addMovie,
   // showMovie,
   // deleteMovie
+
 };
