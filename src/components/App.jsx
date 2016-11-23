@@ -12,7 +12,10 @@ class App extends Component {
     console.log(this);
     this.state = {
       gardens: [],
-      selected: ''
+      selected: '',
+      name: '',
+      zipcode: '',
+      user_id: ''
     };
   }
 
@@ -34,6 +37,48 @@ class App extends Component {
     .catch(err => console.log(err));
   }
 
+  updateFormName(e) {
+    this.setState({
+      name: e.target.value,
+    });
+    console.log(this.state.name);
+  }
+
+  updateFormZip(e) {
+    this.setState({
+      zipcode: e.target.value,
+    });
+    console.log(this.state.zipcode);
+  }
+
+  updateFormId(e) {
+    this.setState({
+      user_id: e.target.value,
+    });
+    console.log(this.state.user_id);
+  }
+
+  handleFormSubmit() {
+    fetch('/db/gardens', {
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      method: 'POST',
+      body: JSON.stringify({
+        name: this.state.name,
+        zipcode: this.state.zipcode,
+        user_id: this.state.user_id
+      })
+    })
+    .then(this.setState({
+      name: '',
+      zipcode: '',
+      user_id: ''
+    }))
+    .then(this.getAllGardens())
+    .catch(err => console.log(err));
+  }
+
 
   render() {
     return (
@@ -41,7 +86,15 @@ class App extends Component {
       <header>
         <h1>CityGrow</h1>
       </header>
-      <GardenForm />
+      <GardenForm
+        name={this.state.name}
+        zipcode={this.state.zipcode}
+        user_id={this.state.user_id}
+        updateFormName={event => this.updateFormName(event)}
+        updateFormZip={event => this.updateFormZip(event)}
+        updateFormId={event => this.updateFormId(event)}
+        handleFormSubmit={event => this.handleFormSubmit()}
+       />
       <h1>**********Garden List************</h1>
       <GardenList
         getAllGardens={this.getAllGardens.bind(this)}

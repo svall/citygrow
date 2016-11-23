@@ -28,14 +28,14 @@ function getOneGarden(req, res, next) {
   }
 
 // Add new garden: (puppiesapi)
-// function addGarden(req, res, next) {
-//   db.one(`INSERT INTO quadrants (name, zip, size)
-//     VALUES ($/name/, $/zip/, $/size/)
-//     ;`, req.body)
-//   .then(() => {
-//     next();
-//   })
-// }
+function addGarden(req, res, next) {
+  db.none(`INSERT INTO gardens (name, zipcode)
+    VALUES ($/name/, $/zipcode/)
+    ;`, req.body)
+  .then(() => {
+    next();
+  })
+}
 
 // function addGarden(req, res, next) {
 //   db.none(`
@@ -70,7 +70,7 @@ function getOneGarden(req, res, next) {
 module.exports = {
   getAllGardens,
   getOneGarden,
-  // addGarden,
+  addGarden,
   // addMovie,
   // showMovie,
   // deleteMovie
