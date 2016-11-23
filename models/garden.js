@@ -15,17 +15,32 @@ function getOneGarden(req, res, next) {
   // console.log('models/getGarden');
   // console.log('*******************', req.body);
   const gID = Number.parseInt(req.params.gardenID);
-    db.one(`SELECT *
-      FROM gardens
-      WHERE id = $1
+      db.any(`SELECT
+        gardens.name AS name,
+        quadrants.id AS quadrant,
+        quadrants.user_id AS user,
+        quadrants.produce_id AS produce
+      FROM quadrants
+      INNER JOIN gardens
+        ON (quadrants.garden_id = gardens.id)
+        WHERE gardens.id = $1
       `, gID)
+    // db.any(`SELECT *
+    //   FROM gardens
+    //   WHERE id = $1
+    //   `, gID)
     .then((gdata) => {
-      // console.log('in model ', movie);
       res.garden = gdata;
+      console.log('in model ', gdata);
       next();
     })
     .catch(error => next(error));
   }
+
+// function getQuadrants(req, res, next) {
+
+// }
+
 
 // Add new garden: (puppiesapi)
 function addGarden(req, res, next) {
@@ -77,6 +92,7 @@ module.exports = {
   getOneGarden,
   addGarden,
   getLastGardenId,
+  // displayGardenAndQuadrants,
   // addMovie,
   // showMovie,
   // deleteMovie

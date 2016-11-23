@@ -9,7 +9,7 @@ class App extends Component {
 
   constructor(props) {
     super();
-    console.log(this);
+    // console.log(this);
     this.state = {
       gardens: [],
       selected: '',
@@ -17,6 +17,7 @@ class App extends Component {
       zipcode: '',
       user_id: '',
       garden_id: '',
+      quadrants: [],
       q1: '',
       q2: '',
       q3: '',
@@ -29,10 +30,34 @@ class App extends Component {
     };
   }
 
+  getOneGarden() {
+    // fetch(`/db/gardens/:gardenID`)
+    // .then(r => r.json())
+    // .then((data) => {
+    //   this.setState({
+    //     quadrants: data
+    //   });
+    //   console.log('************App.jsx data: ' + data);
+    // })
+    // .catch(err => console.log(err));
+  }
+
   changeSelection(num) {
+    // getOneGarden()
     this.setState({
       selected: this.state.gardens[num],
+      garden_id: this.state.gardens[num].id
     });
+    fetch(`/db/gardens/${this.state.garden_id}`)
+    .then(r => r.json())
+    .then((data) => {
+      this.setState({
+        quadrants: data
+      });
+      console.log('************App.jsx data: ' + data[0]);
+    })
+    .catch(err => console.log(err));
+    // console.log("this is the state of selected ", this.state.garden_id);
   }
 
   getAllGardens() {
@@ -42,10 +67,11 @@ class App extends Component {
       this.setState({
         gardens: data
       });
-      // console.log('************App.jsx data: ' + data);
+      // console.log("this is gardens all: ", data);
     })
     .catch(err => console.log(err));
   }
+
 
   updateFormName(e) {
     this.setState({
@@ -89,7 +115,6 @@ class App extends Component {
     .catch(err => console.log(err));
   }
 
-
   render() {
     return (
       <div>
@@ -114,10 +139,14 @@ class App extends Component {
         getAllGardens={this.getAllGardens.bind(this)}
         collection={this.state.gardens}
         changeSelection={this.changeSelection.bind(this)}
+        // getOneGarden={event => this.getOneGarden()}
       />
       <h1>***********Garden Display***********</h1>
       <GardenDisplay
         garden={this.state.selected}
+        garden_id={this.state.garden_id}
+        // getOneGarden={event => this.getOneGarden(event)}
+        quadrants={this.state.quadrants}
       />
 
       </div>

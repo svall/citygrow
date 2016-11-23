@@ -1,14 +1,21 @@
 const express = require('express');
 const router = express.Router();
 
-const { getAllGardens, getOneGarden, addGarden, getLastGardenId } = require('../models/garden');
+const { getAllGardens, getOneGarden, addGarden, getLastGardenId, /*getQuadrants*/ } = require('../models/garden');
 
 
 // gets the info for a specific garden
 router.get('/:gardenID', getOneGarden, (req, res) => {
   res.json(res.garden || []);
-  // console.log(res.garden);
+  // res.rows = res.garden
+  // console.log(res.rows);
 });
+
+// gets the quadrants for a gardenID
+// router.get('/quadrants/:gardenID', getQuadrants, (req, res) => {
+//   res.json(res.garden || []);
+//   // console.log(res.garden);
+// });
 
 // gets all the gardens from the db
 router.get('/', getAllGardens, (req, res) => {

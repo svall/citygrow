@@ -27,7 +27,9 @@ class GardenList extends Component {
          <h3>Choose from existing gardens: </h3>
         </div>
 
-        <GardenListItem />
+        <GardenListItem
+          // getOneGarden={this.props.getOneGarden}
+        />
         <div className="list-container">
          {this.showGardens(this.props.collection)}
         </div>
