@@ -2,11 +2,10 @@ import React, { Component } from 'react';
 
 const GardenDisplayItem = props => (
   <div>
-
-    <p>Garden name: {props.name}</p>
-    <p>Garden Zipcode: {props.zipcode}</p>
-    <p>Garden Id: {props.garden_id}</p>
-    <p>Quadrants: {props.quadrants}</p>
+    <button value={props.name}>Garden name: {props.name}</button>
+    <button>Garden Zipcode: {props.zipcode}</button>
+    <button>Garden Id: {props.garden_id}</button>
+    <button>Quadrants: {Object.quadrant}</button>
   </div>
 
 );

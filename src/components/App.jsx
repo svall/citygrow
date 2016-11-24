@@ -30,31 +30,21 @@ class App extends Component {
     };
   }
 
-  getOneGarden() {
-    // fetch(`/db/gardens/:gardenID`)
-    // .then(r => r.json())
-    // .then((data) => {
-    //   this.setState({
-    //     quadrants: data
-    //   });
-    //   console.log('************App.jsx data: ' + data);
-    // })
-    // .catch(err => console.log(err));
-  }
-
   changeSelection(num) {
     // getOneGarden()
     this.setState({
       selected: this.state.gardens[num],
       garden_id: this.state.gardens[num].id
     });
-    fetch(`/db/gardens/${this.state.garden_id}`)
+    // console.log('heeeere in app.js', this.state.gardens[num].id);
+    fetch(`/db/gardens/${this.state.gardens[num].id}`)
     .then(r => r.json())
     .then((data) => {
+      // console.log('heeeere in app.js');
       this.setState({
         quadrants: data
       });
-      console.log('************App.jsx data: ' + data[0]);
+      console.log('************App.jsxs data: ', data);
     })
     .catch(err => console.log(err));
     // console.log("this is the state of selected ", this.state.garden_id);
@@ -72,6 +62,17 @@ class App extends Component {
     .catch(err => console.log(err));
   }
 
+  getOneGarden() {
+    // fetch(`/db/gardens/:gardenID`)
+    // .then(r => r.json())
+    // .then((data) => {
+    //   this.setState({
+    //     quadrants: data
+    //   });
+    //   console.log('************App.jsx data: ' + data);
+    // })
+    // .catch(err => console.log(err));
+  }
 
   updateFormName(e) {
     this.setState({
@@ -145,6 +146,7 @@ class App extends Component {
       <GardenDisplay
         garden={this.state.selected}
         garden_id={this.state.garden_id}
+        collection={this.state.quadrants}
         // getOneGarden={event => this.getOneGarden(event)}
         quadrants={this.state.quadrants}
       />

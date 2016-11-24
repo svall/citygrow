@@ -16,26 +16,21 @@ router.post('/users/login', logIn, (req, res) => {
   res.json(res.rows);
 });
 
-
+// gets the quadrants for a gardenID
 router.get('/:gardenID', getOneGarden, (req, res) => {
   res.json(res.garden || []);
   // res.rows = res.garden
-  // console.log(res.rows);
+  // console.log('in routes for garden id ', res.garden);
 });
 
-// gets the quadrants for a gardenID
 // router.get('/quadrants/:gardenID', getQuadrants, (req, res) => {
 //   res.json(res.garden || []);
 //   // console.log(res.garden);
 // });
 
 // gets all the gardens from the db
-
-
 router.get('/', getAllGardens, (req, res) => {
   res.json(res.gardens || []);
-
-
 });
 
 router.post('/', addGarden, (req, res) => {

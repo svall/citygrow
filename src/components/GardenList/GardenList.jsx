@@ -22,7 +22,7 @@ class GardenList extends Component {
 
   render(){
     return (
-   <div>
+      <div>
         <div>
          <h3>Choose from existing gardens: </h3>
         </div>
@@ -33,17 +33,9 @@ class GardenList extends Component {
         <div className="list-container">
          {this.showGardens(this.props.collection)}
         </div>
-
-
-
-
-  </div>
-
+      </div>
     );
   }
-
 }
-
-
 
 export default GardenList;

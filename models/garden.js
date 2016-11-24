@@ -31,7 +31,7 @@ function getOneGarden(req, res, next) {
     //   `, gID)
     .then((gdata) => {
       res.garden = gdata;
-      console.log('in model ', gdata);
+      // console.log('in model ', gdata);
       next();
     })
     .catch(error => next(error));
