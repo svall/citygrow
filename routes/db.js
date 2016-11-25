@@ -33,7 +33,7 @@ router.get('/', getAllGardens, (req, res) => {
   res.json(res.gardens || []);
 });
 
-router.post('/', addGarden, (req, res) => {
+router.post('/', addGarden, getLastGardenId, (req, res) => {
   res.json(res.gardens || []);
   // console.log(res.gardens);
 });

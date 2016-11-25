@@ -1,52 +1,49 @@
 import React, { Component } from 'react';
-
 import "./gardenDisplay.css";
 import GardenDisplayItem from '../GardenDisplayItem/GardenDisplayItem.jsx';
-
-// export default class GardenDisplay extends Component{
-//   render(){
-//     return (
-//       <article className="show-container">
-//         <GardenDisplayItem
-//           key={this.props.garden.index}
-//           name={this.props.garden.name}
-//           zipcode={this.props.garden.zipcode}
-//           garden_id={this.props.garden_id}
-//           quadrants={this.props.quadrants}
-//         />
-//       </article>
-//     );
-//   }
-// }
+import GardenDisplayItemHead from '../GardenDisplayItemHead/GardenDisplayItemHead.jsx';
 
 class GardenDisplay extends Component {
 
-  showQuadrants(collection) {
-    return collection.map((quadrants, index) =>
-      // <article className="quadrant-list-item" key={index}}>
+  // maps throught the quadrants array saved in "quadrants" state, then passes to GardenDisplayItem the data for each quadrant
+  showQuadrants(quadrants) {
+    // console.log(this.props.quadrants);
+    return this.props.quadrants.map((quadrants, i) =>
         <GardenDisplayItem
-          key={quadrants.index}
-          // name={this.props.garden.name}
-          // zipcode={this.props.garden.zipcode}
-          garden_id={quadrants.garden_id}
+          key={i}
+          name={quadrants.name}
+          user={quadrants.user}
+          produce={quadrants.produce}
           quadrants={quadrants.quadrant}
+          q1={i}
+          // prod_quad={this.props.prod_quad}
+          // user_quad={this.props.user_quad}
+          // q2={this.props.q2}
         />
-      // </article>
     );
   }
-  // componentWillMount() {
-  //   this.props.changeSelection();
-  // }
 
   render(){
     return (
       <div>
+        <GardenDisplayItemHead
+          name={this.props.garden.name}
+          zipcode={this.props.garden.zipcode}
+          garden_id={this.props.garden_id}
+        />
         <GardenDisplayItem
+          activateQuadrant={this.props.activateQuadrant.bind(this)}
+          garden_id={this.props.garden_id}
+          // prod_quad={this.props.prod_quad}
+          // user_quad={this.props.user_quad}
+          // q1={this.props.q1}
+          // handleQuadrantSelection={this.props.handleQuadrantSelection}
           // getOneGarden={this.props.getOneGarden}
         />
         <div className="quadrant-container">
-         {this.showQuadrants(this.props.collection)}
+         {this.showQuadrants(this.props.quadrants)}
         </div>
+
       </div>
     );
   }
