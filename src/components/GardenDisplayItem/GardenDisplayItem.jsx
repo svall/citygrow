@@ -16,23 +16,23 @@ const GardenDisplayItem = props => (
           onChange={props.updateIdQuadrant}
           // onClick={() => props.handleQuadrantForm(props.quad_id)}
         />
-      </label>
+      </label><br></br>
       <label>Produce Assigned:
+        <p>{props.produce}</p>
         <input
           type="text"
           placeholder="Produce"
-          value={props.produce}
           onChange={props.updateProduceQuadrant}
         />
-      </label>
+      </label><br></br>
       <label>User Assigned:
+        <p>{props.user}</p>
         <input
           type="text"
           placeholder="User Name"
-          value={props.user}
           onChange={props.updateUserQuadrant}
         />
-      </label>
+      </label><br></br>
       <input
           type="button"
           name="submit"
