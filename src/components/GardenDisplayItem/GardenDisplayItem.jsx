@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import './GardenDisplayItem.css';
 
 const GardenDisplayItem = props => (
-<<<<<<< HEAD
+
+
   <div className="garden-item">
     <p>Garden name: {props.name}</p>
     <p>Garden Zipcode: {props.zipcode}</p>
     <p>Garden Id: {props.garden_id}</p>
     <p>Quadrants: {props.quadrants}</p>
-=======
+
   <div>
     <form>
       <div>Key: {props.q1}</div>
@@ -51,9 +52,8 @@ const GardenDisplayItem = props => (
     <br>
 
     </br>
->>>>>>> master
   </div>
-
+  </div>
 );
 
 export default GardenDisplayItem;

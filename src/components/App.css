@@ -8,7 +8,7 @@ body{
   background-color: #f7f7f7;
 }
 .head-wrapper{
-  width: 92vw;
+  width: 100vw;
   height: 8vh;
   background-color: #333;
   color:#5aba52;
@@ -30,15 +30,14 @@ body{
 
 }*/
 
-.SignUp{
-  float: right;
-  border: 1px solid black;
-}
-
 footer{
   width: 100%;
   height: 8vh;
   background-color: #5aba52;
-  margin-top: 63px;
+  margin-top: 72px;
 
+}
+#form-container{
+   float: right;
+  border: 1px solid black;
 }

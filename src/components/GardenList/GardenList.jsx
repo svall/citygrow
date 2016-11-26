@@ -23,28 +23,14 @@ class GardenList extends Component {
 
   render(){
     return (
-<<<<<<< HEAD
-   <div>
-=======
       <div>
-        <div>
-         <h3>Choose from existing gardens: </h3>
-        </div>
->>>>>>> master
-
-      <GardenListItem
+        <GardenListItem
           // getOneGarden={this.props.getOneGarden}
         />
         <div className="list-container">
           {this.showGardens(this.props.collection)}
         </div>
-<<<<<<< HEAD
-
-</div>
-
-=======
       </div>
->>>>>>> master
     );
   }
 }
