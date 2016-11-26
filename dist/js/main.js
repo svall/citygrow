@@ -7632,12 +7632,60 @@
   \****************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";Object.defineProperty(exports,"__esModule",{value:true});var _react=__webpack_require__(/*! react */ 1);var _react2=_interopRequireDefault(_react);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}var GardenDisplayItem=function GardenDisplayItem(props){return _react2.default.createElement("div",null,_react2.default.createElement("form",null,_react2.default.createElement("div",null,"Key: ",props.q1),_react2.default.createElement("div",null,"Quad ID: ",props.quadrants),_react2.default.createElement("label",null,"Quadrant Number:",_react2.default.createElement("input",{type:"text",value:props.quadrants// name={props.quadrants}
+	"use strict";Object.defineProperty(exports,"__esModule",{value:true});var _react=__webpack_require__(/*! react */ 1);var _react2=_interopRequireDefault(_react);__webpack_require__(/*! ./GardenDisplayItem.css */ 244);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}var GardenDisplayItem=function GardenDisplayItem(props){return _react2.default.createElement("div",null,_react2.default.createElement("form",null,_react2.default.createElement("div",null,"Key: ",props.q1),_react2.default.createElement("div",null,"Quad ID: ",props.quadrants),_react2.default.createElement("label",null,"Quadrant Number:",_react2.default.createElement("input",{type:"text",value:props.quadrants// name={props.quadrants}
 	// onClick={props.activateQuadrant}
 	,onChange:props.updateIdQuadrant// onClick={() => props.handleQuadrantForm(props.quad_id)}
 	})),_react2.default.createElement("label",null,"Produce Assigned:",_react2.default.createElement("input",{type:"text",placeholder:"Produce",value:props.produce,onChange:props.updateProduceQuadrant})),_react2.default.createElement("label",null,"User Assigned:",_react2.default.createElement("input",{type:"text",placeholder:"User Name",value:props.user,onChange:props.updateUserQuadrant})),_react2.default.createElement("input",{type:"button",name:"submit",value:"SELECT"// onClick={props.activateQuadrant}
 	// onChange={props.updateIdQuadrant}
-	,onClick:function onClick(){return props.handleQuadrantForm(props.quadrants);}})),_react2.default.createElement("br",null));};exports.default=GardenDisplayItem;
+	,onClick:function onClick(){return props.handleQuadrantForm(props.quadrants);}})),_react2.default.createElement("br",null));};// class GardenDisplayItem extends Component {
+	//   render(props) {
+	//     return(
+	//       <div>
+	//         <form>
+	//           <div>Key: {this.props.q1}</div>
+	//           <div>Quad ID: {this.props.quadrants}</div>
+	//           <label>Quadrant Number:
+	//             <input
+	//               type="text"
+	//               value={this.props.quadrants}
+	//               // name={props.quadrants}
+	//               // onClick={props.activateQuadrant}
+	//               onChange={this.props.updateIdQuadrant}
+	//               // onClick={() => props.handleQuadrantForm(props.quad_id)}
+	//             />
+	//           </label>
+	//           <label>Produce Assigned:
+	//             <input
+	//               type="text"
+	//               placeholder="Produce"
+	//               value={this.props.produce}
+	//               onChange={this.props.updateProduceQuadrant}
+	//             />
+	//           </label>
+	//           <label>User Assigned:
+	//             <input
+	//               type="text"
+	//               placeholder="User Name"
+	//               value={this.props.user}
+	//               onChange={this.props.updateUserQuadrant}
+	//             />
+	//           </label>
+	//           <input
+	//               type="button"
+	//               name="submit"
+	//               value="SELECT"
+	//               // onClick={props.activateQuadrant}
+	//               // onChange={props.updateIdQuadrant}
+	//               onClick={() => this.props.handleQuadrantForm()}
+	//             />
+	//         </form>
+	//         <br>
+	//         </br>
+	//       </div>
+	//       )
+	//   }
+	// }
+	exports.default=GardenDisplayItem;
 
 /***/ },
 /* 187 */
@@ -8556,6 +8604,15 @@
 	prevLocation=currentLocation;listener(currentLocation);}};// Ensure the hash is encoded properly.
 	var path=getHashPath();var encodedPath=pathCoder.encodePath(path);if(path!==encodedPath)replaceHashPath(encodedPath);(0,_DOMUtils.addEventListener)(window,HashChangeEvent,handleHashChange);return function(){return(0,_DOMUtils.removeEventListener)(window,HashChangeEvent,handleHashChange);};};var updateLocation=function updateLocation(location,pathCoder,queryKey,updateHash){var state=location.state;var key=location.key;var path=pathCoder.encodePath((0,_PathUtils.createPath)(location));if(state!==undefined){path=(0,_PathUtils.addQueryStringValueToPath)(path,queryKey,key);(0,_DOMStateStorage.saveState)(key,state);}prevLocation=location;updateHash(path);};var pushLocation=exports.pushLocation=function pushLocation(location,pathCoder,queryKey){return updateLocation(location,pathCoder,queryKey,function(path){if(getHashPath()!==path){pushHashPath(path);}else{process.env.NODE_ENV!=='production'?(0,_warning2.default)(false,'You cannot PUSH the same path using hash history'):void 0;}});};var replaceLocation=exports.replaceLocation=function replaceLocation(location,pathCoder,queryKey){return updateLocation(location,pathCoder,queryKey,function(path){if(getHashPath()!==path)replaceHashPath(path);});};
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
+
+/***/ },
+/* 244 */
+/*!****************************************************************!*\
+  !*** ./src/components/GardenDisplayItem/GardenDisplayItem.css ***!
+  \****************************************************************/
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
 
 /***/ }
 /******/ ]);
