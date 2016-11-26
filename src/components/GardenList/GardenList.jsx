@@ -6,7 +6,8 @@ class GardenList extends Component {
 
   showGardens(collection) {
     return collection.map((garden, index) =>
-      <article className="garden-list-item" key={index} onClick={()=>this.props.changeSelection(index)}>
+      <article className="garden-list-item"
+      key={index} onClick={()=>this.props.changeSelection(index)}>
         <GardenListItem
           key={garden.index}
           name={garden.name}
@@ -23,21 +24,15 @@ class GardenList extends Component {
   render(){
     return (
    <div>
-        <div>
-         <h3>Choose from existing gardens: </h3>
-        </div>
 
-        <GardenListItem
+      <GardenListItem
           // getOneGarden={this.props.getOneGarden}
         />
         <div className="list-container">
-         {this.showGardens(this.props.collection)}
+          {this.showGardens(this.props.collection)}
         </div>
 
-
-
-
-  </div>
+</div>
 
     );
   }
