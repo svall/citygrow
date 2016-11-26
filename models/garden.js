@@ -15,13 +15,19 @@ function getOneGarden(req, res, next) {
   // console.log('models/getGarden');
   // console.log('*******************', req.body);
   const gID = Number.parseInt(req.params.gardenID);
-    db.one(`SELECT *
-      FROM gardens
-      WHERE id = $1
+      db.any(`SELECT
+        gardens.name AS name,
+        quadrants.id AS quadrant,
+        quadrants.user_id AS user,
+        quadrants.produce_id AS produce
+      FROM quadrants
+      INNER JOIN gardens
+        ON (quadrants.garden_id = gardens.id)
+        WHERE gardens.id = $1
       `, gID)
     .then((gdata) => {
-      // console.log('in model ', movie);
       res.garden = gdata;
+      // console.log('in model ', gdata);
       next();
     })
     .catch(error => next(error));
@@ -44,16 +50,69 @@ function getLastGardenId(req, res, next) {
   .then((data) => {
     let maxid = Number.parseInt(data.max);
     res.gardenid = maxid;
+    let user = 1;
+    let produce = 1;
     // console.log('id garden is', maxid);
       db.none(`
-        INSERT INTO quadrants(garden_id)
-        VALUES($1), ($1), ($1), ($1), ($1), ($1), ($1), ($1), ($1);`, maxid)
+        INSERT INTO quadrants (garden_id)
+        VALUES ($1), ($1), ($1), ($1), ($1), ($1), ($1), ($1), ($1);
+        `, maxid)
       .then(() => {
       next();
       })
     })
   .catch(error => next(error));
 }
+        // INSERT INTO quadrants(garden_id, produce_id, user_id)
+        // VALUES($1, $2, $3), ($1, $2, $3), ($1, $2, $3), ($1, $2, $3), ($1, $2, $3), ($1, $2, $3), ($1, $2, $3), ($1, $2, $3), ($1, $2, $3);
+        // `, [maxid, produce, user])
+
+// INSERT INTO quadrants (garden_id, produce_id, user_id)
+// VALUES ($1, $2, $3);`, [maxid, produce, user])
+
+
+// INSERT INTO quadrants(garden_id, produce_id, user_id)
+// VALUES($1, $2, $3), ($1, $2, $3), ($1, $2, $3), ($1, $2, $3), ($1, $2, $3), ($1, $2, $3), ($1, $2, $3), ($1, $2, $3), ($1, $2, $3);`, [maxid, produce, user])
+
+// INSERT INTO quadrants(garden_id, produce_id)
+// VALUES($1, $2), ($1, $2), ($1, $2), ($1, $2), ($1, $2), ($1, $2), ($1, $2), ($1, $2), ($1, $2);
+// `, [maxid, user])
+
+function postToQuadrant(req, res, next) {
+  db.none(
+    `INSERT INTO quadrants (produce_id, user_id)
+    VALUES ($1, $2)
+      WHERE id = $3
+    ;`, [prod_quad, user_quad, quad_id])
+  .then(() => {
+    next();
+  })
+  .catch(error => next(error));
+}
+
+    // `INSERT INTO quadrants (produce_id, user_id)
+    // VALUES ($/produce_id/, $/user_id/)
+    //   WHERE id = $/quad_id/
+    // ;`, req.body)
+
+// function addQuadrantUserProduce(req, res, next) {
+//   db.one('SELECT max(id) FROM gardens;')
+//   .then((data) => {
+//     let maxid = Number.parseInt(data.max);
+//     res.gardenid = maxid;
+//     let user = "";
+//     let produce = "";
+//     // console.log('id garden is', maxid);
+//       db.none(`
+//         INSERT INTO quadrants(garden_id)
+//         VALUES($1), ($1), ($1), ($1), ($1), ($1), ($1), ($1), ($1);`, maxid)
+//       .then(() => {
+//       next();
+//       })
+//     })
+//   .catch(error => next(error));
+// }
+
 
 
 // function showMovie(req, res, next) {
@@ -77,6 +136,8 @@ module.exports = {
   getOneGarden,
   addGarden,
   getLastGardenId,
+  postToQuadrant,
+  // displayGardenAndQuadrants,
   // addMovie,
   // showMovie,
   // deleteMovie
