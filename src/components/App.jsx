@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import GardenForm from './GardenForm/GardenForm.jsx';
 import GardenList from './GardenList/GardenList.jsx';
+import SignupForm from './Signup/SignupForm.jsx';
+import LoginForm from './Login/LoginForm.jsx';
 // import GardenListItem from './GardenListItem/GardenListItem.jsx';
 import GardenDisplay from './GardenDisplay/GardenDisplay.jsx';
-// import style from './App.css';
+import style from './App.css';
 
 class App extends Component {
 
@@ -25,7 +27,16 @@ class App extends Component {
       user_quad:0,
 
       quadrants: [],
-      q1: false
+      q1: false,
+      signup: {
+        username: '',
+        password: ''
+      },
+      login: {
+        loggedIn: false,
+        username: '',
+        password: ''
+      }
     };
   }
 
@@ -155,6 +166,94 @@ class App extends Component {
     .catch(err => console.log(err));
   }
 
+  //________________USERS________________
+
+  updateFormSignUpUsername(e) {
+    console.log(e.target.value);
+    this.setState({
+      signup: {
+        username: e.target.value,
+        password: this.state.signup.password
+      }
+    });
+  }
+
+  updateFormSignUpPassword(e) {
+    console.log(e.target.value);
+    this.setState({
+      signup: {
+        username: this.state.signup.username,
+        password: e.target.value
+      }
+    });
+  }
+
+  updateFormLogInUsername(e) {
+    this.setState({
+      login: {
+        username: e.target.value,
+        password: this.state.login.password
+      }
+    });
+  }
+
+  updateFormLogInPassword(e) {
+    this.setState({
+      login: {
+        username: this.state.login.username,
+        password: e.target.value
+      }
+    });
+  }
+
+  handleSignUp() {
+    fetch('/users', {
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      method: 'POST',
+      body: JSON.stringify({
+        username: this.state.signup.username,
+        password: this.state.signup.password
+      })
+    })
+    .then(this.setState({
+      signup: {
+        username: '',
+        password: ''
+      }
+    }))
+    .then(this.alertInfo('You have signed up!'))
+    .catch(err => console.log(err));
+  }
+
+  handleLogIn() {
+    console.log('test');
+    fetch('/auth', {
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      method: 'POST',
+      body: JSON.stringify({
+        username: this.state.login.username,
+        password: this.state.login.password
+      })
+    })
+    .then(console.log(this.state.login.username))
+    .then(this.setState({
+      login: {
+        username: '',
+        password: ''
+      }
+    }))
+    .then(this.onSuccessfulLogIn)
+    .catch(err => console.log(err));
+  }
+
+  onSuccessfulLogIn(a,b) {
+    console.log(a,b);
+  }
+
   // changes the state of a quadrant when it has been clicked on
   // activateQuadrant(e) {
   //   this.setState({
@@ -168,9 +267,34 @@ class App extends Component {
   render() {
     return (
       <div>
-      <header>
-        <h1>CityGrow</h1>
-      </header>
+         <header>
+            <div className="head-wrapper">
+             <h1>CityGrow</h1>
+          <SignupForm
+            signUpUsername={this.state.signup.username}
+            signUpPassword={this.state.signup.password}
+            updateFormUsername={event => this.updateFormSignUpUsername(event)}
+            updateFormPassword={event => this.updateFormSignUpPassword(event)}
+            handleFormSubmit={() => this.handleSignUp()}
+          />
+          <LoginForm
+            className={this.state.login.loggedIn ? 'hidden' : ''}
+            logInUsername={this.state.login.username}
+            logInPassword={this.state.login.password}
+            updateFormUsername={event => this.updateFormLogInUsername(event)}
+            updateFormPassword={event => this.updateFormLogInPassword(event)}
+            handleFormSubmit={() => this.handleLogIn()}
+          />
+
+            </div>
+         </header>
+
+      <div className="carousel">
+
+      </div>
+
+
+
       <GardenForm
         name={this.state.name}
         zipcode={this.state.zipcode}
@@ -184,13 +308,14 @@ class App extends Component {
         garden_id={this.state.garden_id}
 
       />
-      <h1>**********Garden List************</h1>
+    <div className="gardenlist">
       <GardenList
         getAllGardens={this.getAllGardens.bind(this)}
         collection={this.state.gardens}
         changeSelection={this.changeSelection.bind(this)}
       />
-      <h1>***********Garden Display***********</h1>
+    </div>
+    <div className="gardenDisplay">
       <GardenDisplay
         garden={this.state.selected}
         garden_id={this.state.garden_id}
@@ -204,12 +329,14 @@ class App extends Component {
         updateProduceQuadrant={event => this.updateProduceQuadrant(event)}
         updateUserQuadrant={event => this.updateUserQuadrant(event)}
         handleQuadrantForm={event => this.handleQuadrantForm()}
-
         // activateQuadrant={event => this.activateQuadrant(event)}
         // q1={this.state.q1}
         // q2={this.state.q2}
       />
+    </div>
 
+       <footer>
+       </footer>
       </div>
     );
   }

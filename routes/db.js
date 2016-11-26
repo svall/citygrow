@@ -8,13 +8,13 @@ router.post('/users', createUser, (req, res) => {
   res.json(res.rows);
 });
 
-router.get('/users', authenticate, (req, res) => {
-  res.json('You\'re a valid user');
-});
+// router.get('/users', authenticate, (req, res) => {
+//   res.json('You\'re a valid user');
+// });
 
-router.post('/users/login', logIn, (req, res) => {
-  res.json(res.rows);
-});
+// router.post('/users/login', logIn, (req, res) => {
+//   res.json(res.rows);
+// });
 
 // gets the quadrants for a gardenID
 router.get('/:gardenID', getOneGarden, (req, res) => {
