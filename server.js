@@ -1,8 +1,13 @@
+'use strict';
 require('dotenv').config({ silent: true });
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const logger = require('morgan');
+const cookieParser  = require('cookie-parser');
+const usersRouter   = require('./routes/users');
+const authRouter    = require('./routes/auth');
+
 
 const dbRouter = require('./routes/db.js');
 
@@ -19,4 +24,5 @@ app.listen(port, () => console.log('Server is listening on port', port));
 
 
 app.use('/db/gardens', dbRouter);
-
+app.use('/users', usersRouter);
+app.use('/auth', authRouter);
