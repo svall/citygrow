@@ -3,14 +3,7 @@ import './GardenDisplayItem.css';
 
 const GardenDisplayItem = props => (
 
-
   <div className="garden-item">
-    <p>Garden name: {props.name}</p>
-    <p>Garden Zipcode: {props.zipcode}</p>
-    <p>Garden Id: {props.garden_id}</p>
-    <p>Quadrants: {props.quadrants}</p>
-
-  <div>
     <form>
       <div>Key: {props.q1}</div>
       <div>Quad ID: {props.quadrants}</div>
@@ -52,7 +45,6 @@ const GardenDisplayItem = props => (
     <br>
 
     </br>
-  </div>
   </div>
 );
 
