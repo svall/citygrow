@@ -27,16 +27,11 @@ function getOneGarden(req, res, next) {
       `, gID)
     .then((gdata) => {
       res.garden = gdata;
-      console.log('in model ', gdata);
+      // console.log('in model ', gdata);
       next();
     })
     .catch(error => next(error));
   }
-
-// function getQuadrants(req, res, next) {
-
-// }
-
 
 // Add new garden: (puppiesapi)
 function addGarden(req, res, next) {
@@ -55,16 +50,69 @@ function getLastGardenId(req, res, next) {
   .then((data) => {
     let maxid = Number.parseInt(data.max);
     res.gardenid = maxid;
+    let user = 1;
+    let produce = 1;
     // console.log('id garden is', maxid);
       db.none(`
-        INSERT INTO quadrants(garden_id)
-        VALUES($1), ($1), ($1), ($1), ($1), ($1), ($1), ($1), ($1);`, maxid)
+        INSERT INTO quadrants (garden_id)
+        VALUES ($1), ($1), ($1), ($1), ($1), ($1), ($1), ($1), ($1);
+        `, maxid)
       .then(() => {
       next();
       })
     })
   .catch(error => next(error));
 }
+        // INSERT INTO quadrants(garden_id, produce_id, user_id)
+        // VALUES($1, $2, $3), ($1, $2, $3), ($1, $2, $3), ($1, $2, $3), ($1, $2, $3), ($1, $2, $3), ($1, $2, $3), ($1, $2, $3), ($1, $2, $3);
+        // `, [maxid, produce, user])
+
+// INSERT INTO quadrants (garden_id, produce_id, user_id)
+// VALUES ($1, $2, $3);`, [maxid, produce, user])
+
+
+// INSERT INTO quadrants(garden_id, produce_id, user_id)
+// VALUES($1, $2, $3), ($1, $2, $3), ($1, $2, $3), ($1, $2, $3), ($1, $2, $3), ($1, $2, $3), ($1, $2, $3), ($1, $2, $3), ($1, $2, $3);`, [maxid, produce, user])
+
+// INSERT INTO quadrants(garden_id, produce_id)
+// VALUES($1, $2), ($1, $2), ($1, $2), ($1, $2), ($1, $2), ($1, $2), ($1, $2), ($1, $2), ($1, $2);
+// `, [maxid, user])
+
+function postToQuadrant(req, res, next) {
+  db.none(
+    `INSERT INTO quadrants (produce_id, user_id)
+    VALUES ($1, $2)
+      WHERE id = $3
+    ;`, [prod_quad, user_quad, quad_id])
+  .then(() => {
+    next();
+  })
+  .catch(error => next(error));
+}
+
+    // `INSERT INTO quadrants (produce_id, user_id)
+    // VALUES ($/produce_id/, $/user_id/)
+    //   WHERE id = $/quad_id/
+    // ;`, req.body)
+
+// function addQuadrantUserProduce(req, res, next) {
+//   db.one('SELECT max(id) FROM gardens;')
+//   .then((data) => {
+//     let maxid = Number.parseInt(data.max);
+//     res.gardenid = maxid;
+//     let user = "";
+//     let produce = "";
+//     // console.log('id garden is', maxid);
+//       db.none(`
+//         INSERT INTO quadrants(garden_id)
+//         VALUES($1), ($1), ($1), ($1), ($1), ($1), ($1), ($1), ($1);`, maxid)
+//       .then(() => {
+//       next();
+//       })
+//     })
+//   .catch(error => next(error));
+// }
+
 
 
 // function showMovie(req, res, next) {
@@ -88,6 +136,7 @@ module.exports = {
   getOneGarden,
   addGarden,
   getLastGardenId,
+  postToQuadrant,
   // displayGardenAndQuadrants,
   // addMovie,
   // showMovie,
