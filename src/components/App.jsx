@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import GardenForm from './GardenForm/GardenForm.jsx';
 import GardenList from './GardenList/GardenList.jsx';
+import SignUp from './SignUp/SignUp.jsx';
 // import GardenListItem from './GardenListItem/GardenListItem.jsx';
 import GardenDisplay from './GardenDisplay/GardenDisplay.jsx';
-// import style from './App.css';
+import style from './App.css';
 
 class App extends Component {
 
@@ -168,9 +169,19 @@ class App extends Component {
   render() {
     return (
       <div>
-      <header>
-        <h1>CityGrow</h1>
-      </header>
+         <header>
+            <div className="head-wrapper">
+             <h1>CityGrow</h1>
+
+            </div>
+         </header>
+
+      <div className="carousel">
+
+      </div>
+
+
+
       <GardenForm
         name={this.state.name}
         zipcode={this.state.zipcode}
@@ -184,6 +195,34 @@ class App extends Component {
         garden_id={this.state.garden_id}
 
       />
+<<<<<<< HEAD
+      <div className="gardenlist">
+
+        <GardenList
+          getAllGardens={this.getAllGardens.bind(this)}
+          collection={this.state.gardens}
+          changeSelection={this.changeSelection.bind(this)}
+          // getOneGarden={event => this.getOneGarden()}
+        />
+      </div>
+
+
+      <div className="gardenDisplay">
+
+         <GardenDisplay
+          garden={this.state.selected}
+          garden_id={this.state.garden_id}
+          // getOneGarden={event => this.getOneGarden(event)}
+          quadrants={this.state.quadrants}
+        />
+       </div>
+
+       <footer>
+       </footer>
+
+
+
+=======
       <h1>**********Garden List************</h1>
       <GardenList
         getAllGardens={this.getAllGardens.bind(this)}
@@ -209,6 +248,7 @@ class App extends Component {
         // q1={this.state.q1}
         // q2={this.state.q2}
       />
+>>>>>>> master
 
       </div>
     );

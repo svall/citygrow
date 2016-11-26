@@ -1,20 +1,18 @@
 import React, { Component } from 'react';
+import "./SignUp.css";
 
-import "/.Login.css";
-
-export default class Login extends Component {
+export default class SignUp extends Component {
   render(){
 
     return(
-
       <div className="SignUp">
-      <h2>SignUp</h2>
+      <h4>SignUp</h4>
         <input
         type="text"
         placeholder="Enter Name"
         name="name"
         />
-          <h2>Password</h2>
+          <h4>Password</h4>
          <input
         type="text"
         placeholder="Enter password"

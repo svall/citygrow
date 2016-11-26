@@ -25,10 +25,6 @@ function getOneGarden(req, res, next) {
         ON (quadrants.garden_id = gardens.id)
         WHERE gardens.id = $1
       `, gID)
-    // db.any(`SELECT *
-    //   FROM gardens
-    //   WHERE id = $1
-    //   `, gID)
     .then((gdata) => {
       res.garden = gdata;
       // console.log('in model ', gdata);
