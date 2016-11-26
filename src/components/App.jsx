@@ -18,13 +18,13 @@ class App extends Component {
       garden_id: '',
       name: '',
       zipcode: '',
-      user_id: '',
-      produce: 0,
-      user: 0,
+      // user_id: '',
+      // produce: 0,
+      // user: 0,
 
       quad_id: 0,
       prod_quad: 0,
-      user_quad:0,
+      user_quad: 0,
 
       quadrants: [],
       q1: false,
@@ -38,6 +38,7 @@ class App extends Component {
         password: ''
       }
     };
+    this.updateIdQuadrant = this.updateIdQuadrant.bind(this);
   }
 
   // ====== GET ALL GARDENS AND GET GARDEN BY ID ======== //
