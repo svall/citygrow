@@ -19,21 +19,17 @@ class App extends Component {
       user_id: '',
       produce: 0,
       user: 0,
+
+      quad_id: 0,
       prod_quad: 0,
       user_quad:0,
+
       quadrants: [],
-      q1: false,
-      q2: false,
-      q3: false,
-      q4: false,
-      q5: false,
-      q6: false,
-      q7: false,
-      q8: false,
-      q9: false
+      q1: false
     };
   }
 
+  // ====== GET ALL GARDENS AND GET GARDEN BY ID ======== //
   // displays the info for the garden clicked on from the garden list, it sets that garden's info to the "selected" state
   // with the id of the garden, it does a fetch call and gets from the quadrants table all quadrants with that garden id
   changeSelection(num) {
@@ -68,6 +64,7 @@ class App extends Component {
     .catch(err => console.log(err));
   }
 
+  // ====== GARDEN CREATION FORM ======== //
   // form elements to update info about new gardens
   updateFormName(e) {
     this.setState({
@@ -112,16 +109,61 @@ class App extends Component {
     .catch(err => console.log(err));
   }
 
-  // changes the state of a quadrant when it has been clicked on
-  activateQuadrant(e) {
+
+  // ====== QUADRANTS FORM ======== //
+  updateIdQuadrant(e) {
     this.setState({
-      q1: true,
-      q2: true,
-    })
-    console.log('q1 is active ', this.state.q1);
-    console.log('q2 is active ', this.state.q2);
+      quad_id: e.target.value,
+    });
+    console.log('updating state for quad_id ', this.state.quad_id);
   }
 
+  updateProduceQuadrant(e) {
+    this.setState({
+      prod_quad: e.target.value,
+    });
+    console.log('updating state for prod_quad ', this.state.prod_quad);
+  }
+
+  updateUserQuadrant(e) {
+    this.setState({
+      user_quad: e.target.value,
+    });
+    console.log('updating state for user_quad ', this.state.user_quad);
+  }
+
+  // with a post method, handleFormSubmit() adds a new garden to the db
+  handleQuadrantForm(e) {
+    console.log('in app quad form quad Id', this.state.quad_id)
+    fetch(`/db/gardens/quadrants/${this.state.quad_id}`, {
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      method: 'POST',
+      body: JSON.stringify({
+        quad_id: this.state.quad_id,
+        produce_id: this.state.prod_quad,
+        user_id: this.state.user_quad
+      })
+    })
+    .then(this.setState({
+        quad_id: 0,
+        produce_id: 0,
+        user_id: 0
+    }))
+    .then(this.changeSelection(this.state.garden_id))
+    .catch(err => console.log(err));
+  }
+
+  // changes the state of a quadrant when it has been clicked on
+  // activateQuadrant(e) {
+  //   this.setState({
+  //     q1: true,
+  //     q2: true,
+  //   })
+  //   console.log('q1 is active ', this.state.q1);
+  //   console.log('q2 is active ', this.state.q2);
+  // }
 
   render() {
     return (
@@ -154,12 +196,18 @@ class App extends Component {
         garden_id={this.state.garden_id}
         collection={this.state.quadrants}
         quadrants={this.state.quadrants}
-        // handleQuadrantSelection={event => this.handleQuadrantSelection(event)}
+
+        quad_id={this.state.quad_id}
         prod_quad={this.state.prod_quad}
         user_quad={this.state.user_quad}
-        activateQuadrant={event => this.activateQuadrant(event)}
-        q1={this.state.q1}
-        q2={this.state.q2}
+        updateIdQuadrant={event => this.updateIdQuadrant(event)}
+        updateProduceQuadrant={event => this.updateProduceQuadrant(event)}
+        updateUserQuadrant={event => this.updateUserQuadrant(event)}
+        handleQuadrantForm={event => this.handleQuadrantForm()}
+
+        // activateQuadrant={event => this.activateQuadrant(event)}
+        // q1={this.state.q1}
+        // q2={this.state.q2}
       />
 
       </div>

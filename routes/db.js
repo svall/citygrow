@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const { getAllGardens, getOneGarden, addGarden, getLastGardenId, /*getQuadrants*/ } = require('../models/garden');
+const { getAllGardens, getOneGarden, addGarden, getLastGardenId, postToQuadrant, /*getQuadrants*/ } = require('../models/garden');
 const { createUser, authenticate, logIn } = require('../models/user')
 
 router.post('/users', createUser, (req, res) => {
@@ -22,6 +22,14 @@ router.get('/:gardenID', getOneGarden, (req, res) => {
   // res.rows = res.garden
   // console.log('in routes for garden id ', res.garden);
 });
+
+// gets the quadrants for a gardenID
+router.post('/quadrants/:quadrantID', postToQuadrant, (req, res) => {
+  res.json(res.quads || []);
+  // res.rows = res.garden
+  // console.log('in routes for garden id ', res.garden);
+});
+
 
 // router.get('/quadrants/:gardenID', getQuadrants, (req, res) => {
 //   res.json(res.garden || []);
