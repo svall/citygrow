@@ -128,7 +128,7 @@ class App extends Component {
     this.setState({
       quad_id: quadrant_id,
     });
-    console.log('updating state for quad_id ', this.state.quad_id);
+    // console.log('updating state for quad_id ', this.state.quad_id);
   }
 
   updateProduceQuadrant(e) {

@@ -7533,7 +7533,8 @@
 	}},{key:'updateFormId',value:function updateFormId(e){this.setState({user_id:e.target.value});// console.log(this.state.user_id);
 	}// with a post method, handleFormSubmit() adds a new garden to the db
 	},{key:'handleFormSubmit',value:function handleFormSubmit(){fetch('/db/gardens',{headers:{'Content-Type':'application/json'},method:'POST',body:JSON.stringify({name:this.state.name,zipcode:this.state.zipcode,user_id:this.state.user_id})}).then(this.setState({name:'',zipcode:'',user_id:''})).then(this.getAllGardens()).catch(function(err){return console.log(err);});}// ====== QUADRANTS FORM ======== //
-	},{key:'updateIdQuadrant',value:function updateIdQuadrant(e){var quadrant_id=Number.parseInt(e.target.value);this.setState({quad_id:quadrant_id});console.log('updating state for quad_id ',this.state.quad_id);}},{key:'updateProduceQuadrant',value:function updateProduceQuadrant(e){var prod_quadrant=Number.parseInt(e.target.value);this.setState({prod_quad:prod_quadrant});// console.log('updating state for prod_quad ', this.state.prod_quad);
+	},{key:'updateIdQuadrant',value:function updateIdQuadrant(e){var quadrant_id=Number.parseInt(e.target.value);this.setState({quad_id:quadrant_id});// console.log('updating state for quad_id ', this.state.quad_id);
+	}},{key:'updateProduceQuadrant',value:function updateProduceQuadrant(e){var prod_quadrant=Number.parseInt(e.target.value);this.setState({prod_quad:prod_quadrant});// console.log('updating state for prod_quad ', this.state.prod_quad);
 	}},{key:'updateUserQuadrant',value:function updateUserQuadrant(e){var user_quadrant=Number.parseInt(e.target.value);this.setState({user_quad:user_quadrant});// console.log('updating state for user_quad ', this.state.user_quad);
 	}// with a post method, handleFormSubmit() adds a new garden to the db
 	},{key:'handleQuadrantForm',value:function handleQuadrantForm(){// console.log('in app quad form quad Id', this.state.quad_id)
@@ -7685,59 +7686,61 @@
   \****************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';Object.defineProperty(exports,"__esModule",{value:true});var _react=__webpack_require__(/*! react */ 1);var _react2=_interopRequireDefault(_react);__webpack_require__(/*! ./GardenDisplayItem.css */ 192);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}var GardenDisplayItem=function GardenDisplayItem(props){return _react2.default.createElement('div',{className:'garden-item'},_react2.default.createElement('form',null,_react2.default.createElement('div',null,'Key: ',props.q1),_react2.default.createElement('div',null,'Quad ID: ',props.quadrants),_react2.default.createElement('label',null,'Quadrant Number:',_react2.default.createElement('input',{type:'text',value:props.quadrants// name={props.quadrants}
+	'use strict';Object.defineProperty(exports,"__esModule",{value:true});var _react=__webpack_require__(/*! react */ 1);var _react2=_interopRequireDefault(_react);__webpack_require__(/*! ./GardenDisplayItem.css */ 192);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}var GardenDisplayItem=function GardenDisplayItem(props){return _react2.default.createElement('div',{className:'garden-item'},_react2.default.createElement('form',null,_react2.default.createElement('div',null,'Quadrant #: ',props.q1),_react2.default.createElement('button',{type:'button',value:props.quadrants,onClick:props.updateIdQuadrant},'SELECT'),_react2.default.createElement('br',null),_react2.default.createElement('br',null),_react2.default.createElement('div',{className:'productUserPopup'},_react2.default.createElement('label',null,_react2.default.createElement('input',{type:'hidden',value:props.quadrants// name={props.quadrants}
 	// onClick={props.activateQuadrant}
-	,onChange:props.updateIdQuadrant// onClick={() => props.handleQuadrantForm(props.quad_id)}
-	})),_react2.default.createElement('br',null),_react2.default.createElement('label',null,'Produce Assigned:',_react2.default.createElement('p',null,props.produce),_react2.default.createElement('input',{type:'text',placeholder:'Produce',onChange:props.updateProduceQuadrant})),_react2.default.createElement('br',null),_react2.default.createElement('label',null,'User Assigned:',_react2.default.createElement('p',null,props.user),_react2.default.createElement('input',{type:'text',placeholder:'User Name',onChange:props.updateUserQuadrant})),_react2.default.createElement('br',null),_react2.default.createElement('input',{type:'button',name:'submit',value:'SELECT'// onClick={props.activateQuadrant}
 	// onChange={props.updateIdQuadrant}
-	,onClick:function onClick(){return props.handleQuadrantForm(props.quadrants);}})),_react2.default.createElement('br',null));};// class GardenDisplayItem extends Component {
-	//   render(props) {
-	//     return(
-	//       <div>
-	//         <form>
-	//           <div>Key: {this.props.q1}</div>
-	//           <div>Quad ID: {this.props.quadrants}</div>
-	//           <label>Quadrant Number:
-	//             <input
-	//               type="text"
-	//               value={this.props.quadrants}
-	//               // name={props.quadrants}
-	//               // onClick={props.activateQuadrant}
-	//               onChange={this.props.updateIdQuadrant}
-	//               // onClick={() => props.handleQuadrantForm(props.quad_id)}
-	//             />
-	//           </label>
-	//           <label>Produce Assigned:
-	//             <input
-	//               type="text"
-	//               placeholder="Produce"
-	//               value={this.props.produce}
-	//               onChange={this.props.updateProduceQuadrant}
-	//             />
-	//           </label>
-	//           <label>User Assigned:
-	//             <input
-	//               type="text"
-	//               placeholder="User Name"
-	//               value={this.props.user}
-	//               onChange={this.props.updateUserQuadrant}
-	//             />
-	//           </label>
-	//           <input
-	//               type="button"
-	//               name="submit"
-	//               value="SELECT"
-	//               // onClick={props.activateQuadrant}
-	//               // onChange={props.updateIdQuadrant}
-	//               onClick={() => this.props.handleQuadrantForm()}
-	//             />
-	//         </form>
-	//         <br>
-	//         </br>
-	//       </div>
-	//       )
-	//   }
-	// }
+	// onClick={() => props.handleQuadrantForm(props.quad_id)}
+	})),_react2.default.createElement('label',null,'Produce Assigned:',_react2.default.createElement('p',null,props.produce),_react2.default.createElement('input',{type:'text',placeholder:'Produce',onChange:props.updateProduceQuadrant})),_react2.default.createElement('br',null),_react2.default.createElement('label',null,'User Assigned:',_react2.default.createElement('p',null,props.user),_react2.default.createElement('input',{type:'text',placeholder:'User Name',onChange:props.updateUserQuadrant})),_react2.default.createElement('br',null),_react2.default.createElement('input',{type:'button',name:'submit',value:'RESERVE AREA'// onClick={props.activateQuadrant}
+	// onChange={props.updateIdQuadrant}
+	,onClick:function onClick(){return props.handleQuadrantForm(props.quadrants);}}))));};// const GardenDisplayItem = props => (
+	//   <div className="garden-item">
+	//     <form>
+	//       <div>Quadrant #: {props.q1}</div>
+	//       <div>Quad ID: {props.quadrants}</div><br></br>
+	//       <button
+	//         type="button"
+	//         value={props.quadrants}
+	//         onClick={props.updateIdQuadrant}
+	//       >SELECT</button>
+	//       <label>Quadrant Number:
+	//         <input
+	//           type="text"
+	//           value={props.quadrants}
+	//           // name={props.quadrants}
+	//           // onClick={props.activateQuadrant}
+	//           onChange={props.updateIdQuadrant}
+	//           // onClick={() => props.handleQuadrantForm(props.quad_id)}
+	//         />
+	//       </label><br></br>
+	//       <label>Produce Assigned:
+	//         <p>{props.produce}</p>
+	//         <input
+	//           type="text"
+	//           placeholder="Produce"
+	//           onChange={props.updateProduceQuadrant}
+	//         />
+	//       </label><br></br>
+	//       <label>User Assigned:
+	//         <p>{props.user}</p>
+	//         <input
+	//           type="text"
+	//           placeholder="User Name"
+	//           onChange={props.updateUserQuadrant}
+	//         />
+	//       </label><br></br>
+	//       <input
+	//           type="button"
+	//           name="submit"
+	//           value="RESERVE LAND"
+	//           // onClick={props.activateQuadrant}
+	//           // onChange={props.updateIdQuadrant}
+	//           onClick={() => props.handleQuadrantForm(props.quadrants)}
+	//         />
+	//     </form>
+	//     <br>
+	//     </br>
+	//   </div>
+	// );
 	exports.default=GardenDisplayItem;
 
 /***/ },
