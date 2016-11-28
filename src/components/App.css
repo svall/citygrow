@@ -4,17 +4,20 @@
   margin:0 auto;
 }
 
-body{
-  background-color: #f7f7f7;
-}
-.head-wrapper{
-  width: 100vw;
+
+header{
+
+  width: 93.7vw;
   height: 8vh;
   background-color: #333;
   color:#5aba52;
   padding-top:10px;
   padding-left: 10px;
   padding-right:80px;
+
+}
+#logo{
+  width: 20px;
 }
 
 .gardenlist{
@@ -24,11 +27,7 @@ body{
 
 }
 
-/*#title{
-   float: left;
-  border: 1px solid black;
 
-}*/
 
 footer{
   width: 100%;
@@ -36,8 +35,7 @@ footer{
   background-color: #5aba52;
   margin-top: 72px;
 
+
 }
-#form-container{
-   float: right;
-  border: 1px solid black;
-}
+
+

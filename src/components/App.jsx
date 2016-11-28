@@ -3,6 +3,7 @@ import GardenForm from './GardenForm/GardenForm.jsx';
 import GardenList from './GardenList/GardenList.jsx';
 import SignupForm from './Signup/SignupForm.jsx';
 import LoginForm from './Login/LoginForm.jsx';
+
 // import GardenListItem from './GardenListItem/GardenListItem.jsx';
 import GardenDisplay from './GardenDisplay/GardenDisplay.jsx';
 import style from './App.css';
@@ -265,13 +266,16 @@ class App extends Component {
   //   console.log('q2 is active ', this.state.q2);
   // }
 
-  render() {
+  render(){
     return (
       <div>
          <header>
-            <div className="head-wrapper">
-             <h1>CityGrow</h1>
-          <SignupForm
+
+        <div className="head-wrapper">
+
+
+
+            <SignupForm
             signUpUsername={this.state.signup.username}
             signUpPassword={this.state.signup.password}
             updateFormUsername={event => this.updateFormSignUpUsername(event)}
@@ -285,14 +289,12 @@ class App extends Component {
             updateFormUsername={event => this.updateFormLogInUsername(event)}
             updateFormPassword={event => this.updateFormLogInPassword(event)}
             handleFormSubmit={() => this.handleLogIn()}
-          />
+           />
 
-            </div>
-         </header>
+           </div>
+       </header>
 
-      <div className="carousel">
 
-      </div>
 
 
 
@@ -337,8 +339,15 @@ class App extends Component {
     </div>
 
        <footer>
-       </footer>
-      </div>
+        <div className="team">
+        <h3>Meat The Team </h3>
+          <ul>
+            <img src={'../Images/s.png'}/>
+
+          </ul>
+        </div>
+   </footer>
+ </div>
     );
   }
 }
