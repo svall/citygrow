@@ -14,16 +14,16 @@ class SignupForm extends Component {
         <input
           type="text"
           placeholder="email"
-          value={this.props.signUpUsername}
-          onChange={this.props.updateFormUsername}
+          value={this.props.signup.username}
+          onChange={this.props.updateFormSignUsername}
         />
         <input
           type="password"
           placeholder="password"
-          value={this.props.signUpPassword}
-          onChange={this.props.updateFormPassword}
+          value={this.props.signup.password}
+          onChange={this.props.updateFormSignPassword}
         />
-        <button onClick={this.props.handleFormSubmit}>
+        <button onClick={this.props.handleSign}>
           SignUp!
         </button>
 

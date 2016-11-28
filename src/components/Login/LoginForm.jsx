@@ -13,16 +13,16 @@ class LoginForm extends Component {
         <input
           type="text"
           placeholder="email"
-          value={this.props.logInUsername}
-          onChange={this.props.updateFormUsername}
+          value={this.props.login.username}
+          onChange={this.props.updateFormLogUsername}
         />
         <input
           type="password"
           placeholder="password"
-          value={this.props.logInPassword}
-          onChange={this.props.updateFormPassword}
+          value={this.props.login.password}
+          onChange={this.props.updateFormLogPassword}
         />
-        <button onClick={this.props.handleFormSubmit}>
+        <button onClick={this.props.handleLog}>
           Log In!
         </button>
       </div>
