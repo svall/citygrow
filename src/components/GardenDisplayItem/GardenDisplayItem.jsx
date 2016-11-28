@@ -8,13 +8,14 @@ class GardenDisplayItem extends Component {
       <div>
         <div className="quadrant-item">
           <form className="quadrantForm">
+            <h2>Chose Quadrant Number:</h2>
             <div>Quadrant #: {this.props.q1}</div>
             <button
               className="quadrantSelectButton"
               type="button"
               value={this.props.quadrants}
               onClick={this.props.updateIdQuadrant}
-            >SELECT</button><br></br><br></br>
+            >SELECT QUADRANT</button><br></br><br></br>
             <div className="productUserPopup">
               <label>
                 <input
