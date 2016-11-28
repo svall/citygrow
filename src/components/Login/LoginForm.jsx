@@ -6,7 +6,9 @@ class LoginForm extends Component {
 
   render(){
     return (
-      <div id={style['form-container']}>
+      <div className="intro-pages">
+      <h1 className="intro-title">Log in</h1>
+      <div id='link-container'>
         <input
           type="text"
           placeholder="email"
@@ -22,6 +24,7 @@ class LoginForm extends Component {
         <button onClick={this.props.handleFormSubmit}>
           Log In!
         </button>
+      </div>
       </div>
     );
   }

@@ -6,7 +6,9 @@ class SignupForm extends Component {
 
   render(){
     return (
-      <div id='form-container'>
+      <div className="intro-pages">
+      <h1 className="intro-title">Sign Up</h1>
+      <div id='link-container'>
         <input
           type="text"
           placeholder="email"
@@ -22,6 +24,7 @@ class SignupForm extends Component {
         <button onClick={this.props.handleFormSubmit}>
           SignUp!
         </button>
+      </div>
       </div>
     );
   }
