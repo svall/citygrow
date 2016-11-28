@@ -3,7 +3,7 @@ import GardenForm from './GardenForm/GardenForm.jsx';
 import GardenList from './GardenList/GardenList.jsx';
 import SignupForm from './Signup/SignupForm.jsx';
 import LoginForm from './Login/LoginForm.jsx';
-
+import Welcome from './Welcome/Welcome.jsx';
 // import GardenListItem from './GardenListItem/GardenListItem.jsx';
 import GardenDisplay from './GardenDisplay/GardenDisplay.jsx';
 import style from './App.css';

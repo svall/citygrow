@@ -1,27 +1,48 @@
-#Form-container{
-   float: right;
-
+.intro-pages {
+  height: 50vh;
+  width: 50vw;
+  border: 2px solid black;
+  top: 20vh;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  min-width: 300px;
+  min-height: 250px;
+}
+.intro-title {
+  padding: 10px;
+  text-align: center;
+  position: relative;
+  top: 30%;
+}
+#link-container {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  position: relative;
+  top: 50%;
 }
 
-.Box{
-/*  background-color: rgba(27,28,30,0.5);*/
+/*.Box{
+  background-color: rgba(27,28,30,0.5);
   align-self: center;
   width: 200px;
   height: 100px;
   display: flex;
   flex-direction: column;
-  /*flex-wrap: wrap;*/
+  flex-wrap: wrap;
   align-items: center;
- /* margin: 60px auto;*/
+  margin: 60px auto;
   border-radius: 8px;
   margin-right:20px;
   border: 1px solid #444444;
-  /*overflow: scroll;*/
+  overflow: scroll;
   animation: shwoop .5s ease-in-out;
   transform: scaleY(1);
-}
+}*/
 
-@keyframes shwoop {
+/*@keyframes shwoop {
   0% {
     top: (0px);
     transform: scaleX(0);
@@ -30,10 +51,10 @@
     bottom: (100px);
     transform: scaleX(1);
   }
-}
-.signup-inputContainer input{
+}*/
+/*.signup-inputContainer input{
   display: flex;
-/*  flex-direction: row;*/
+  flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   margin: 5px;
@@ -41,10 +62,10 @@
   border-radius: 4px;
   height: 30px;
   width: 100px;
-}
+}*/
 
-.signup-inputContainer button{
+/*.signup-inputContainer button{
   background-color: #64E279;
   border-radius: 4px;
   margin: 0 5px;
-}
+}*/
