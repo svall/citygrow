@@ -4,6 +4,8 @@ import style from './SignupForm.css';
 // create a React Component called _App_
 class SignupForm extends Component {
 
+
+
   render(){
     return (
       <div className="intro-pages">
@@ -24,6 +26,7 @@ class SignupForm extends Component {
         <button onClick={this.props.handleFormSubmit}>
           SignUp!
         </button>
+
       </div>
       </div>
     );

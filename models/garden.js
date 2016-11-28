@@ -63,57 +63,41 @@ function getLastGardenId(req, res, next) {
     })
   .catch(error => next(error));
 }
-        // INSERT INTO quadrants(garden_id, produce_id, user_id)
-        // VALUES($1, $2, $3), ($1, $2, $3), ($1, $2, $3), ($1, $2, $3), ($1, $2, $3), ($1, $2, $3), ($1, $2, $3), ($1, $2, $3), ($1, $2, $3);
-        // `, [maxid, produce, user])
 
-// INSERT INTO quadrants (garden_id, produce_id, user_id)
-// VALUES ($1, $2, $3);`, [maxid, produce, user])
-
-
-// INSERT INTO quadrants(garden_id, produce_id, user_id)
-// VALUES($1, $2, $3), ($1, $2, $3), ($1, $2, $3), ($1, $2, $3), ($1, $2, $3), ($1, $2, $3), ($1, $2, $3), ($1, $2, $3), ($1, $2, $3);`, [maxid, produce, user])
-
-// INSERT INTO quadrants(garden_id, produce_id)
-// VALUES($1, $2), ($1, $2), ($1, $2), ($1, $2), ($1, $2), ($1, $2), ($1, $2), ($1, $2), ($1, $2);
-// `, [maxid, user])
+// function getLastGardenId(req, res, next) {
+//   db.one('SELECT max(id) FROM gardens;')
+//   .then((data) => {
+//     let maxid = Number.parseInt(data.max);
+//     res.gardenid = maxid;
+//     let user = 1;
+//     let produce = 1;
+//     // console.log('id garden is', maxid);
+//     for(let i = 0; i < 5; i++) {
+//       db.none(`
+//         INSERT INTO quadrants (garden_id)
+//         VALUES ($1);
+//         `, maxid)
+//       .then(() => {
+//       next();
+//       })
+//     }
+//   })
+//   .catch(error => next(error));
+// }
 
 function postToQuadrant(req, res, next) {
   db.none(
-    `INSERT INTO quadrants (produce_id, user_id)
-    VALUES ($1, $2)
-      WHERE id = $3
-    ;`, [prod_quad, user_quad, quad_id])
+    `UPDATE quadrants
+    SET
+      produce_id = $/prod_quad/,
+      user_id = $/user_quad/
+    WHERE id = $/quad_id/
+    ;`, req.body)
   .then(() => {
     next();
   })
   .catch(error => next(error));
 }
-
-    // `INSERT INTO quadrants (produce_id, user_id)
-    // VALUES ($/produce_id/, $/user_id/)
-    //   WHERE id = $/quad_id/
-    // ;`, req.body)
-
-// function addQuadrantUserProduce(req, res, next) {
-//   db.one('SELECT max(id) FROM gardens;')
-//   .then((data) => {
-//     let maxid = Number.parseInt(data.max);
-//     res.gardenid = maxid;
-//     let user = "";
-//     let produce = "";
-//     // console.log('id garden is', maxid);
-//       db.none(`
-//         INSERT INTO quadrants(garden_id)
-//         VALUES($1), ($1), ($1), ($1), ($1), ($1), ($1), ($1), ($1);`, maxid)
-//       .then(() => {
-//       next();
-//       })
-//     })
-//   .catch(error => next(error));
-// }
-
-
 
 // function showMovie(req, res, next) {
 //   db.any(`SELECT * FROM currentmovies WHERE currentmovies.id = $1;`, [req.params.id])

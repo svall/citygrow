@@ -1,6 +1,72 @@
 .header-search-bar{
   background: #D3D3D3;
+  width: 0 auto;
+  height: 100px;
 
 
 }
 
+#drop-down{
+  float: left;
+  cursor: pointer;
+  width: 150px;
+  color:#5aba52;
+ margin-top: 30px;
+ margin-left: 30px;
+}
+
+
+#form{
+/*  background-color: rgba(27,28,30,0.5);*/
+/*  align-self: center;*/
+/*float: left;*/
+  width: 350px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  /*flex-wrap: wrap;*/
+ /* align-items: center;*/
+ /* margin: 60px auto;*/
+/*  border-radius: 8px;*/
+ margin-left: 20px;
+padding-top:18px;
+/*  border: 1px solid #444444;*/
+  /*overflow: scroll;*/
+  animation: ani .5s ease-in-out;
+    transform: scaleY(1);
+}
+
+@keyframes ani {
+  0% {
+    top: (0px);
+    transform: scaleX(0);
+  }
+  100% {
+    bottom: (100px);
+    transform: scaleX(1);
+  }
+}
+
+
+
+#form input{
+  display: flex;
+/*  flex-direction: row;*/
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 5px;
+
+  border-radius: 4px;
+  height: 30px;
+  width: 100px;
+  display: inline;
+}
+
+
+
+#form button{
+  background-color: #64E279;
+  border-radius: 4px;
+  margin: 0 5px;
+
+}

@@ -6,20 +6,63 @@
   border: 2px solid black;
 }
 */
-
-
-
+/*.quadrant-container {
+  background-color: orange;
+  width: 300px;
+  height: 190px;
+}*/
 .garden-item {
-  height: 32vh;
+  background-color: lightblue;
+  margin-left: 525px;
   width: 36vw;
-  background-color: lightgrey;
+  padding: 10px;
+  margin-top: 100px;
+}
+
+.quadrant-item {
+  background-color: lightgreen;
+  width: 16vw;
+  margin-left: 525px;
+  padding: 10px;
+  margin-top: 15px;
+  /*display: inline;*/
+}
+
+.quadrant-item:hover {
+  background-color: red;
+/*  width: 16vw;
+  margin-left: 525px;
+  padding: 10px;*/
+  /*display: inline;*/
+}
+
+.quadrantSelectButton {
+/*  font-size: 25px;
+  padding: 30px;*/
+  font-size: 15px;
+  padding: 10px;
+}
+
+.productUserPopup {
+  /*margin-top: -100px;*/
+  /*position: absolute;*/
+  background-color: lightpink;
+  visibility: visible;
+}
+
+.productUserPopupHide {
+  /*margin-top: -100px;*/
+  /*position: absolute;*/
+  /*background-color: lightpink;*/
+  /*visibility: hidden;*/
+/*  background-color: lightgrey;
   border-radius: 2px;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: space-around;
-  margin-left: 525px;
+  margin-left: 720px;
   margin-top: 20px;
   padding-left: 70px;
-  padding-top:230px;
+  padding-top:230px;*/
 }

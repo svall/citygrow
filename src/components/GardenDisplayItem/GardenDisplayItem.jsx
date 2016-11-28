@@ -1,102 +1,176 @@
 import React, { Component } from 'react';
 import './GardenDisplayItem.css';
 
-const GardenDisplayItem = props => (
 
-  <div className="garden-item">
-    <form>
-      <div>Key: {props.q1}</div>
-      <div>Quad ID: {props.quadrants}</div>
-      <label>Quadrant Number:
-        <input
-          type="text"
-          value={props.quadrants}
-          // name={props.quadrants}
-          // onClick={props.activateQuadrant}
-          onChange={props.updateIdQuadrant}
-          // onClick={() => props.handleQuadrantForm(props.quad_id)}
-        />
-      </label>
-      <label>Produce Assigned:
-        <input
-          type="text"
-          placeholder="Produce"
-          value={props.produce}
-          onChange={props.updateProduceQuadrant}
-        />
-      </label>
-      <label>User Assigned:
-        <input
-          type="text"
-          placeholder="User Name"
-          value={props.user}
-          onChange={props.updateUserQuadrant}
-        />
-      </label>
-      <input
-          type="button"
-          name="submit"
-          value="SELECT"
-          // onClick={props.activateQuadrant}
-          // onChange={props.updateIdQuadrant}
-          onClick={() => props.handleQuadrantForm(props.quadrants)}
-        />
-    </form>
-    <br>
+class GardenDisplayItem extends Component {
+  render() {
+    return(
+      <div>
+        <div className="quadrant-item">
+          <form className="quadrantForm">
+            <h2>1) Chose Quadrant:</h2>
+            <div>Quadrant #: {this.props.q1}</div>
+            <button
+              className="quadrantSelectButton"
+              type="button"
+              value={this.props.quadrants}
+              onClick={this.props.updateIdQuadrant}
+            >SELECT QUADRANT</button><br></br><br></br>
+            <h2>2) Add Produce and User:</h2>
+            <div className="productUserPopup">
+              <label>
+                <input
+                  type="hidden"
+                  value={this.props.quadrants}
+                  // name={props.quadrants}
+                  // onClick={props.activateQuadrant}
+                  // onChange={props.updateIdQuadrant}
+                  // onClick={() => props.handleQuadrantForm(props.quad_id)}
+                />
+              </label>
+              <label>Produce Assigned:
+                <p>{this.props.produce}</p>
+                <input
+                  type="text"
+                  placeholder="Produce"
+                  onChange={this.props.updateProduceQuadrant}
+                />
+              </label><br></br>
+              <label>User Assigned:
+                <p>{this.props.user}</p>
+                <input
+                  type="text"
+                  placeholder="User Name"
+                  onChange={this.props.updateUserQuadrant}
+                />
+              </label><br></br>
+              <input
+                  type="button"
+                  name="submit"
+                  value="RESERVE AREA"
+                  // onClick={props.activateQuadrant}
+                  // onChange={props.updateIdQuadrant}
+                  onClick={() => this.props.handleQuadrantForm(this.props.quadrants)}
+                />
+              </div>
+          </form>
+        </div>
+      </div>
+      )
+  }
+}
+// const GardenDisplayItem = props => (
 
-    </br>
-  </div>
-);
 
-// class GardenDisplayItem extends Component {
 
-//   render(props) {
-//     return(
-//       <div>
-//         <form>
-//           <div>Key: {this.props.q1}</div>
-//           <div>Quad ID: {this.props.quadrants}</div>
-//           <label>Quadrant Number:
+
+// const GardenDisplayItem = props => (
+
+//   <div>
+//     <div className="quadrant-item">
+//       <form className="quadrantForm">
+//         <div>Quadrant #: {props.q1}</div>
+//         <button
+//           className="quadrantSelectButton"
+//           type="button"
+//           value={props.quadrants}
+//           onClick={props.updateIdQuadrant}
+//         >SELECT</button><br></br><br></br>
+//         <div className="productUserPopup">
+//           <label>
 //             <input
-//               type="text"
-//               value={this.props.quadrants}
+//               type="hidden"
+//               value={props.quadrants}
 //               // name={props.quadrants}
 //               // onClick={props.activateQuadrant}
-//               onChange={this.props.updateIdQuadrant}
+//               // onChange={props.updateIdQuadrant}
 //               // onClick={() => props.handleQuadrantForm(props.quad_id)}
 //             />
 //           </label>
 //           <label>Produce Assigned:
+//             <p>{props.produce}</p>
 //             <input
 //               type="text"
 //               placeholder="Produce"
-//               value={this.props.produce}
-//               onChange={this.props.updateProduceQuadrant}
+//               onChange={props.updateProduceQuadrant}
 //             />
-//           </label>
+//           </label><br></br>
 //           <label>User Assigned:
+//             <p>{props.user}</p>
 //             <input
 //               type="text"
 //               placeholder="User Name"
-//               value={this.props.user}
-//               onChange={this.props.updateUserQuadrant}
+//               onChange={props.updateUserQuadrant}
 //             />
-//           </label>
+//           </label><br></br>
 //           <input
 //               type="button"
 //               name="submit"
-//               value="SELECT"
+//               value="RESERVE AREA"
 //               // onClick={props.activateQuadrant}
 //               // onChange={props.updateIdQuadrant}
-//               onClick={() => this.props.handleQuadrantForm()}
+//               onClick={() => props.handleQuadrantForm(props.quadrants)}
 //             />
-//         </form>
-//         <br>
-//         </br>
-//       </div>
+//           </div>
+//       </form>
+//     </div>
+//   </div>
+// );
 
-//       )
-//   }
-// }
+
+
+
+// const GardenDisplayItem = props => (
+
+//   <div className="garden-item">
+//     <form>
+//       <div>Quadrant #: {props.q1}</div>
+//       <div>Quad ID: {props.quadrants}</div><br></br>
+//       <button
+//         type="button"
+//         value={props.quadrants}
+//         onClick={props.updateIdQuadrant}
+//       >SELECT</button>
+//       <label>Quadrant Number:
+//         <input
+//           type="text"
+//           value={props.quadrants}
+//           // name={props.quadrants}
+//           // onClick={props.activateQuadrant}
+//           onChange={props.updateIdQuadrant}
+//           // onClick={() => props.handleQuadrantForm(props.quad_id)}
+//         />
+//       </label><br></br>
+//       <label>Produce Assigned:
+//         <p>{props.produce}</p>
+//         <input
+//           type="text"
+//           placeholder="Produce"
+//           onChange={props.updateProduceQuadrant}
+//         />
+//       </label><br></br>
+//       <label>User Assigned:
+//         <p>{props.user}</p>
+//         <input
+//           type="text"
+//           placeholder="User Name"
+//           onChange={props.updateUserQuadrant}
+//         />
+//       </label><br></br>
+//       <input
+//           type="button"
+//           name="submit"
+//           value="RESERVE LAND"
+//           // onClick={props.activateQuadrant}
+//           // onChange={props.updateIdQuadrant}
+//           onClick={() => props.handleQuadrantForm(props.quadrants)}
+//         />
+//     </form>
+//     <br>
+
+//     </br>
+//   </div>
+// );
+
 
 export default GardenDisplayItem;

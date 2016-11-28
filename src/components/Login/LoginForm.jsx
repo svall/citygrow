@@ -4,6 +4,7 @@ import style from './LoginForm.css';
 // create a React Component called _App_
 class LoginForm extends Component {
 
+
   render(){
     return (
       <div className="intro-pages">
