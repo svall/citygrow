@@ -37,22 +37,7 @@ class GardenDisplay extends Component {
           zipcode={this.props.garden.zipcode}
           garden_id={this.props.garden_id}
         />
-        <GardenDisplayItem
-          // activateQuadrant={this.props.activateQuadrant.bind(this)}
-          garden_id={this.props.garden_id}
 
-          // quad_id={this.props.quad_id}
-          // prod_quad={this.props.prod_quad}
-          // user_quad={this.props.user_quad}
-          // updateIdQuadrant={this.props.updateIdQuadrant.bind(this)}
-          // updateProduceQuadrant={this.props.updateProduceQuadrant.bind(this)}
-          // updateUserQuadrant={this.props.updateUserQuadrant.bind(this)}
-          // handleQuadrantForm={this.props.handleQuadrantForm.bind(this)}
-
-          // q1={this.props.q1}
-          // handleQuadrantSelection={this.props.handleQuadrantSelection}
-          // getOneGarden={this.props.getOneGarden}
-        />
         <div className="quadrant-container">
          {this.showQuadrants(this.props.quadrants)}
         </div>

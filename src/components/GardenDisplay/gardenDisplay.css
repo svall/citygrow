@@ -3,3 +3,21 @@
 
 
 }
+
+.contquad {
+  background-color: orange;
+  width: 300px;
+  height: 300px;
+}
+
+/*.quadrant-item {
+  background-color: lightgreen;
+  width: 180px;
+  padding: 10px;
+  margin-top: 15px;
+  display: inline-block;
+  margin-left: -50px;
+  margin-bottom: -17px;
+  border: 2px solid black;
+}
+*/
