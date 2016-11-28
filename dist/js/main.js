@@ -7686,13 +7686,65 @@
   \****************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';Object.defineProperty(exports,"__esModule",{value:true});var _react=__webpack_require__(/*! react */ 1);var _react2=_interopRequireDefault(_react);__webpack_require__(/*! ./GardenDisplayItem.css */ 192);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}var GardenDisplayItem=function GardenDisplayItem(props){return _react2.default.createElement('div',{className:'garden-item'},_react2.default.createElement('form',null,_react2.default.createElement('div',null,'Quadrant #: ',props.q1),_react2.default.createElement('button',{type:'button',value:props.quadrants,onClick:props.updateIdQuadrant},'SELECT'),_react2.default.createElement('br',null),_react2.default.createElement('br',null),_react2.default.createElement('div',{className:'productUserPopup'},_react2.default.createElement('label',null,_react2.default.createElement('input',{type:'hidden',value:props.quadrants// name={props.quadrants}
+	'use strict';Object.defineProperty(exports,"__esModule",{value:true});var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();var _react=__webpack_require__(/*! react */ 1);var _react2=_interopRequireDefault(_react);__webpack_require__(/*! ./GardenDisplayItem.css */ 192);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call&&(typeof call==="object"||typeof call==="function")?call:self;}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass);}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass;}var GardenDisplayItem=function(_Component){_inherits(GardenDisplayItem,_Component);function GardenDisplayItem(){_classCallCheck(this,GardenDisplayItem);return _possibleConstructorReturn(this,(GardenDisplayItem.__proto__||Object.getPrototypeOf(GardenDisplayItem)).apply(this,arguments));}_createClass(GardenDisplayItem,[{key:'render',value:function render(){var _this2=this;return _react2.default.createElement('div',null,_react2.default.createElement('div',{className:'quadrant-item'},_react2.default.createElement('form',{className:'quadrantForm'},_react2.default.createElement('div',null,'Quadrant #: ',this.props.q1),_react2.default.createElement('button',{className:'quadrantSelectButton',type:'button',value:this.props.quadrants,onClick:this.props.updateIdQuadrant},'SELECT'),_react2.default.createElement('br',null),_react2.default.createElement('br',null),_react2.default.createElement('div',{className:'productUserPopup'},_react2.default.createElement('label',null,_react2.default.createElement('input',{type:'hidden',value:this.props.quadrants// name={props.quadrants}
 	// onClick={props.activateQuadrant}
 	// onChange={props.updateIdQuadrant}
 	// onClick={() => props.handleQuadrantForm(props.quad_id)}
-	})),_react2.default.createElement('label',null,'Produce Assigned:',_react2.default.createElement('p',null,props.produce),_react2.default.createElement('input',{type:'text',placeholder:'Produce',onChange:props.updateProduceQuadrant})),_react2.default.createElement('br',null),_react2.default.createElement('label',null,'User Assigned:',_react2.default.createElement('p',null,props.user),_react2.default.createElement('input',{type:'text',placeholder:'User Name',onChange:props.updateUserQuadrant})),_react2.default.createElement('br',null),_react2.default.createElement('input',{type:'button',name:'submit',value:'RESERVE AREA'// onClick={props.activateQuadrant}
+	})),_react2.default.createElement('label',null,'Produce Assigned:',_react2.default.createElement('p',null,this.props.produce),_react2.default.createElement('input',{type:'text',placeholder:'Produce',onChange:this.props.updateProduceQuadrant})),_react2.default.createElement('br',null),_react2.default.createElement('label',null,'User Assigned:',_react2.default.createElement('p',null,this.props.user),_react2.default.createElement('input',{type:'text',placeholder:'User Name',onChange:this.props.updateUserQuadrant})),_react2.default.createElement('br',null),_react2.default.createElement('input',{type:'button',name:'submit',value:'RESERVE AREA'// onClick={props.activateQuadrant}
 	// onChange={props.updateIdQuadrant}
-	,onClick:function onClick(){return props.handleQuadrantForm(props.quadrants);}}))));};// const GardenDisplayItem = props => (
+	,onClick:function onClick(){return _this2.props.handleQuadrantForm(_this2.props.quadrants);}})))));}}]);return GardenDisplayItem;}(_react.Component);// const GardenDisplayItem = props => (
+	// const GardenDisplayItem = props => (
+	//   <div>
+	//     <div className="quadrant-item">
+	//       <form className="quadrantForm">
+	//         <div>Quadrant #: {props.q1}</div>
+	//         <button
+	//           className="quadrantSelectButton"
+	//           type="button"
+	//           value={props.quadrants}
+	//           onClick={props.updateIdQuadrant}
+	//         >SELECT</button><br></br><br></br>
+	//         <div className="productUserPopup">
+	//           <label>
+	//             <input
+	//               type="hidden"
+	//               value={props.quadrants}
+	//               // name={props.quadrants}
+	//               // onClick={props.activateQuadrant}
+	//               // onChange={props.updateIdQuadrant}
+	//               // onClick={() => props.handleQuadrantForm(props.quad_id)}
+	//             />
+	//           </label>
+	//           <label>Produce Assigned:
+	//             <p>{props.produce}</p>
+	//             <input
+	//               type="text"
+	//               placeholder="Produce"
+	//               onChange={props.updateProduceQuadrant}
+	//             />
+	//           </label><br></br>
+	//           <label>User Assigned:
+	//             <p>{props.user}</p>
+	//             <input
+	//               type="text"
+	//               placeholder="User Name"
+	//               onChange={props.updateUserQuadrant}
+	//             />
+	//           </label><br></br>
+	//           <input
+	//               type="button"
+	//               name="submit"
+	//               value="RESERVE AREA"
+	//               // onClick={props.activateQuadrant}
+	//               // onChange={props.updateIdQuadrant}
+	//               onClick={() => props.handleQuadrantForm(props.quadrants)}
+	//             />
+	//           </div>
+	//       </form>
+	//     </div>
+	//   </div>
+	// );
+	// const GardenDisplayItem = props => (
 	//   <div className="garden-item">
 	//     <form>
 	//       <div>Quadrant #: {props.q1}</div>
@@ -7759,7 +7811,7 @@
   \************************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";Object.defineProperty(exports,"__esModule",{value:true});var _react=__webpack_require__(/*! react */ 1);var _react2=_interopRequireDefault(_react);__webpack_require__(/*! ./GardenDisplayItemHead.css */ 194);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}var GardenDisplayItemHead=function GardenDisplayItemHead(props){return _react2.default.createElement("div",{className:"garden-item"},_react2.default.createElement("p",null,"Garden Id: ",props.garden_id),_react2.default.createElement("p",null,"Garden Zipcode: ",props.zipcode),_react2.default.createElement("p",null,"Garden Name: ",props.name));};exports.default=GardenDisplayItemHead;
+	"use strict";Object.defineProperty(exports,"__esModule",{value:true});var _react=__webpack_require__(/*! react */ 1);var _react2=_interopRequireDefault(_react);__webpack_require__(/*! ./GardenDisplayItemHead.css */ 194);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}var GardenDisplayItemHead=function GardenDisplayItemHead(props){return _react2.default.createElement("div",null,_react2.default.createElement("div",{className:"garden-item"},_react2.default.createElement("p",null,"Garden Id: ",props.garden_id),_react2.default.createElement("p",null,"Garden Zipcode: ",props.zipcode),_react2.default.createElement("p",null,"Garden Name: ",props.name)));};exports.default=GardenDisplayItemHead;
 
 /***/ },
 /* 194 */
