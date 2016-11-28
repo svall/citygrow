@@ -18,6 +18,11 @@ import './GardenDisplayItem.css';
 
 // <label><h4 className="dataFromDB">3rd - User: <p style={"font-weight: bold; color:red"}>{this.props.user}</p></h4>
 
+const divStyle = {
+  color: '#7f0000',
+  fontWeight: 'bold',
+  // border: '1px solid black',
+};
 
 class GardenDisplayItem extends Component {
   render() {
@@ -26,40 +31,39 @@ class GardenDisplayItem extends Component {
       // <div>
         <div className="quadrant-item" id={this.props.q1}>
           <form className="quadrantForm">
-            <h4>1st - Chose Quadrant: {this.props.q1}</h4>
+
             <button
               className="quadrantSelectButton"
               type="button"
               value={this.props.quadrants}
               onClick={this.props.updateIdQuadrant}
-            >SELECT THIS QUADRANT</button><br></br><br></br>
+            >SELECT AREA # {(this.props.q1) + 1}</button><br></br><br></br>
             <div className="productUserPopup">
                 <input
                   type="hidden"
                   value={this.props.quadrants}
                 />
-              <label><h4 className="dataFromDB">2nd - Produce: {this.props.produce}</h4>
+                <h4 className="dataFromDB">Produce planted: </h4>
+                <h2 className="dbNumber" style={divStyle}> {this.props.produce} </h2><br></br>
                 <input
                   className="userProdInput"
                   type="text"
-                  placeholder="Produce"
+                  placeholder="Prod. ID"
                   onChange={this.props.updateProduceQuadrant}
-                />
-              </label><br></br>
-              <label><h4 className="dataFromDB">3rd - User: {this.props.user}</h4>
+                /><br></br>
+                <h4 className="dataFromDB">Current User: </h4>
+                <h2 className="dbNumber" style={divStyle}> {this.props.user} </h2><br></br>
                 <input
                   className="userProdInput"
                   type="text"
-                  placeholder="User Name"
+                  placeholder="User ID"
                   onChange={this.props.updateUserQuadrant}
-                />
-              </label><br></br><br></br>
-
+                /><br></br><br></br>
               <input
                 className="reserveButton"
                 type="button"
                 name="submit"
-                value="RESERVE AREA"
+                value="RESERVE"
                 onClick={() => this.props.handleQuadrantForm(this.props.quadrants)}
                 />
               </div>

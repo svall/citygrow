@@ -12,22 +12,31 @@
   height: 190px;
 }*/
 .garden-item {
-  background-color: lightblue;
+/*  background-color: lightblue;
   margin-left: 525px;
   width: 36vw;
   padding: 10px;
-  margin-top: 100px;
+    margin-top: 70px;*/
+  /*margin-top: 100px;*/
 }
 
+#idQuadNum {
+  /*text-align: center;*/
+  width: 100px;
+  margin: auto;
+  padding: auto;
+}
 .quadrant-item {
-  background-color: lightgreen;
+  /*background-color: lightgreen;*/
+  background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuRzsbRW3yjsVaiDGAqyaLFSkvyRdzZJDB6X8tLp4temRm4ity') no-repeat;
+  /*opacity: 0.5;*/
   width: 190px;
   padding: 10px;
   margin-top: 15px;
   display: inline-block;
   margin-left: -50px;
   margin-bottom: -17px;
-  border: 2px solid black;
+  border: 3px solid black;
 }
 
 .quadrant-container {
@@ -42,11 +51,13 @@
 
 .userProdInput {
   font-size: 15px;
-  width: 90px;
+  width: 60px;
 }
 
 .quadrant-item:hover {
-  background-color: red;
+  background: url('http://previews.123rf.com/images/grigory_bruev/grigory_bruev1401/grigory_bruev140100036/24858064-Background-of-newly-plowed-field-ready-for-new-crops-Ploughed-field-in-autumn-Farm-agricultural-back-Stock-Photo.jpg') no-repeat;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
 
 .quadrantSelectButton {
@@ -57,16 +68,23 @@
 }
 
 .reserveButton {
-  font-size: 20px;
-  padding: 10px;
+  font-size: 15px;
+  /*padding: 10px;*/
+  height: 30px;
+  width: 175px;
+  background-color: orange;
 }
 
 .dataFromDB {
+  display: inline-block;
+}
 
+.dbNumber {
+  display: inline;
 }
 
 .productUserPopup {
-  background-color: lightpink;
+  /*background-color: lightpink;*/
   visibility: visible;
 }
 

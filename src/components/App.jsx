@@ -167,8 +167,8 @@ class App extends Component {
         prod_quad: 0,
         user_quad: 0
     }))
-    .then(this.getAllGardens())
-    // .then(this.changeSelection(this.state.garden_id))
+    // .then(this.getAllGardens())
+    .then(this.changeSelection(this.state.garden_id))
     .catch(err => console.log(err));
   }
 
