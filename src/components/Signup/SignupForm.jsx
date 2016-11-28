@@ -8,29 +8,25 @@ class SignupForm extends Component {
 
   render(){
     return (
-      <div id='Form-container'>
-              <div className='title'>
-                  <h4>SIGN UP</h4>
-              </div>
-          <div className='Box'>
+      <div className="intro-pages">
+      <h1 className="intro-title">Sign Up</h1>
+      <div id='link-container'>
+        <input
+          type="text"
+          placeholder="email"
+          value={this.props.signUpUsername}
+          onChange={this.props.updateFormUsername}
+        />
+        <input
+          type="password"
+          placeholder="password"
+          value={this.props.signUpPassword}
+          onChange={this.props.updateFormPassword}
+        />
+        <button onClick={this.props.handleFormSubmit}>
+          SignUp!
+        </button>
 
-           <div className="signup-inputContainer">
-              <input
-                type="text"
-                placeholder="email"
-                value={this.props.signUpUsername}
-                onChange={this.props.updateFormUsername}
-              />
-              <input
-                type="password"
-                placeholder="password"
-                value={this.props.signUpPassword}
-                onChange={this.props.updateFormPassword}
-              />
-
-   <a href='/#/login'><button onClick={event => this.handleFormSubmit(event)}>SignUp!</button></a>
-
-        </div>
       </div>
       </div>
     );
