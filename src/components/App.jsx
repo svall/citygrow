@@ -39,7 +39,7 @@ class App extends Component {
         password: ''
       }
     };
-    this.updateIdQuadrant = this.updateIdQuadrant.bind(this);
+    // this.updateIdQuadrant = this.updateIdQuadrant.bind(this);
   }
 
   // ====== GET ALL GARDENS AND GET GARDEN BY ID ======== //
@@ -125,29 +125,32 @@ class App extends Component {
 
   // ====== QUADRANTS FORM ======== //
   updateIdQuadrant(e) {
+    let quadrant_id = Number.parseInt(e.target.value);
     this.setState({
-      quad_id: e.target.value,
+      quad_id: quadrant_id,
     });
-    console.log('updating state for quad_id ', this.state.quad_id);
+    // console.log('updating state for quad_id ', this.state.quad_id);
   }
 
   updateProduceQuadrant(e) {
+    let prod_quadrant = Number.parseInt(e.target.value);
     this.setState({
-      prod_quad: e.target.value,
+      prod_quad: prod_quadrant,
     });
-    console.log('updating state for prod_quad ', this.state.prod_quad);
+    // console.log('updating state for prod_quad ', this.state.prod_quad);
   }
 
   updateUserQuadrant(e) {
+    let user_quadrant = Number.parseInt(e.target.value);
     this.setState({
-      user_quad: e.target.value,
+      user_quad: user_quadrant,
     });
-    console.log('updating state for user_quad ', this.state.user_quad);
+    // console.log('updating state for user_quad ', this.state.user_quad);
   }
 
   // with a post method, handleFormSubmit() adds a new garden to the db
-  handleQuadrantForm(e) {
-    console.log('in app quad form quad Id', this.state.quad_id)
+  handleQuadrantForm() {
+    // console.log('in app quad form quad Id', this.state.quad_id)
     fetch(`/db/gardens/quadrants/${this.state.quad_id}`, {
       headers: {
         'Content-Type': 'application/json'
@@ -155,16 +158,17 @@ class App extends Component {
       method: 'POST',
       body: JSON.stringify({
         quad_id: this.state.quad_id,
-        produce_id: this.state.prod_quad,
-        user_id: this.state.user_quad
+        prod_quad: this.state.prod_quad,
+        user_quad: this.state.user_quad
       })
     })
     .then(this.setState({
         quad_id: 0,
-        produce_id: 0,
-        user_id: 0
+        prod_quad: 0,
+        user_quad: 0
     }))
-    .then(this.changeSelection(this.state.garden_id))
+    .then(this.getAllGardens())
+    // .then(this.changeSelection(this.state.garden_id))
     .catch(err => console.log(err));
   }
 
