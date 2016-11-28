@@ -1,13 +1,27 @@
 import React, { Component } from 'react';
 import './GardenDisplayItem.css';
 
+// function assignment() {
+//   htmlFor(let i = 0; i < 9; i++) {
+
+//   let product = document.querySelectorAll(".productLength")[1];
+//   console.log('product is ', product)
+//   if(product === null) {
+//     console.log('product is null')
+//   }
+//   else {
+//     console.log('product is not null')
+//   }
+// }
+  // <h4 className="productLength">2nd - Produce: {this.props.produce}</h4>
+// }
+
+// <label><h4 className="dataFromDB">3rd - User: <p style={"font-weight: bold; color:red"}>{this.props.user}</p></h4>
+
 
 class GardenDisplayItem extends Component {
   render() {
-    for(let i = 0; i < 9; i++) {
-      // if({this.props.q1} > 1) {
-
-
+  // assignment();
     return(
       // <div>
         <div className="quadrant-item" id={this.props.q1}>
@@ -24,7 +38,7 @@ class GardenDisplayItem extends Component {
                   type="hidden"
                   value={this.props.quadrants}
                 />
-              <label><h4>2nd - Produce: {this.props.produce}</h4>
+              <label><h4 className="dataFromDB">2nd - Produce: {this.props.produce}</h4>
                 <input
                   className="userProdInput"
                   type="text"
@@ -32,7 +46,7 @@ class GardenDisplayItem extends Component {
                   onChange={this.props.updateProduceQuadrant}
                 />
               </label><br></br>
-              <label><h4>3rd - User: {this.props.user}</h4>
+              <label><h4 className="dataFromDB">3rd - User: {this.props.user}</h4>
                 <input
                   className="userProdInput"
                   type="text"
@@ -53,7 +67,7 @@ class GardenDisplayItem extends Component {
         </div>
       // </div>
       )
-    }
+  //   }
 
   }
 }
