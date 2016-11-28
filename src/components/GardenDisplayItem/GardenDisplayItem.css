@@ -21,48 +21,55 @@
 
 .quadrant-item {
   background-color: lightgreen;
-  width: 16vw;
-  margin-left: 525px;
+  width: 190px;
   padding: 10px;
   margin-top: 15px;
-  /*display: inline;*/
+  display: inline-block;
+  margin-left: -50px;
+  margin-bottom: -17px;
+  border: 2px solid black;
+}
+
+.quadrant-container {
+  /*margin-top: -190px;*/
+  width: 600px;
+  /*background-color: orange;*/
+  margin-left: 40%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.userProdInput {
+  font-size: 15px;
+  width: 90px;
 }
 
 .quadrant-item:hover {
   background-color: red;
-/*  width: 16vw;
-  margin-left: 525px;
-  padding: 10px;*/
-  /*display: inline;*/
 }
 
 .quadrantSelectButton {
-/*  font-size: 25px;
-  padding: 30px;*/
   font-size: 15px;
+  padding: 10px;
+  width: 180px;
+  /*margin: auto;*/
+}
+
+.reserveButton {
+  font-size: 20px;
   padding: 10px;
 }
 
+.dataFromDB {
+
+}
+
 .productUserPopup {
-  /*margin-top: -100px;*/
-  /*position: absolute;*/
   background-color: lightpink;
   visibility: visible;
 }
 
 .productUserPopupHide {
-  /*margin-top: -100px;*/
-  /*position: absolute;*/
-  /*background-color: lightpink;*/
-  /*visibility: hidden;*/
-/*  background-color: lightgrey;
-  border-radius: 2px;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: space-around;
-  margin-left: 720px;
-  margin-top: 20px;
-  padding-left: 70px;
-  padding-top:230px;*/
+
 }
