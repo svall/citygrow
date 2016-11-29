@@ -16,11 +16,18 @@ VALUES
 
 INSERT INTO produce(name, description)
 VALUES
-  ('none', 'no selection'),
+  ('carrot', 'seasonal'),
   ('pepper', 'plant during summer'),
   ('cilantro', 'herbs'),
   ('tomato', 'testing tomatoes'),
-  ('beets', 'seasonal');
+  ('beets', 'seasonal'),
+  ('beans', 'no selection'),
+  ('potato', 'plant during summer'),
+  ('pumpkin', 'herbs'),
+  ('basil', 'testing tomatoes'),
+  ('sweet potato', 'seasonal'),
+  ('garlic', 'seasonal'),
+  ('zucchini', 'seasonal');
 
 INSERT INTO quadrants(garden_id, produce_id, user_id)
 VALUES

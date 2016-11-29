@@ -3,15 +3,17 @@ const router = express.Router();
 const jwt = require('jsonwebtoken');
 const passport = require('../lib/passportStrategy');
 const SECRET = 'livingispain'
+const { findByUsername, authenticate } = require('../models/user');
 // initialize passport
 router.use(passport.initialize());
 
 // handle all the routes
-router.post('/', passport.authenticate('local', { session: false }), (req, res) => {
-  const token = jwt.sign(req.user, SECRET, {
-    expiresIn: 86400 // expires in 24 hours
+router.post('/', findByUsername, (req, res) => {
+ res.json(res.rows)
   });
-  res.json({ token });
-});
+
+
 
 module.exports = router;
+
+// passport.authenticate('local', { session: false }),

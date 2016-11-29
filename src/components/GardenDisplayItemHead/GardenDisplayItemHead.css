@@ -1,0 +1,65 @@
+.mainHeaderInfo {
+  display: inline;
+}
+
+.garden-data {
+  /*background-color: pink;*/
+  margin-left: 525px;
+  width: 700px;
+  height: 250px;
+  padding: 10px;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.selectedGdn {
+  background-color: lightgrey;
+  padding: 15px;
+  width: 260px;
+}
+
+.garden-item {
+  /*background-color: lightblue;*/
+  display: inline-block;
+  width: 350px;
+  padding: 10px;
+  top: 0px;
+}
+
+.produceLegend {
+  display: inline-block;
+  /*background-color: grey;*/
+  width: 170px;
+  font-size: 13px;
+  margin-left: 20px;
+  border: 1px solid black;
+}
+
+.instructionsSelect {
+  font-size: 15px;
+}
+
+#prodDescription {
+  font-weight: bold;
+  margin: 8px;
+  text-align: center;
+}
+
+.produceList {
+  padding: 5px;
+  margin-left: 40px;
+}
+
+#instructionText {
+  margin: 5px;
+  font-weight: bold;
+  font-size: 15px;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.instructionsList {
+  padding: 5px;
+}

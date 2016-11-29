@@ -1,37 +1,23 @@
-/*.garden-item{
-  float: right;
-  height: 300px;
-  width: 200px;
-  overflow: auto;
-  border: 2px solid black;
-}
-*/
-/*.quadrant-container {
-  background-color: orange;
-  width: 300px;
-  height: 190px;
-}*/
-.garden-item {
-  background-color: lightblue;
-  margin-left: 525px;
-  width: 36vw;
-  padding: 10px;
-  margin-top: 100px;
-}
 
+#idQuadNum {
+  width: 100px;
+  margin: auto;
+  padding: auto;
+}
 .quadrant-item {
-  background-color: lightgreen;
+  /*background-color: lightgreen;*/
+  background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuRzsbRW3yjsVaiDGAqyaLFSkvyRdzZJDB6X8tLp4temRm4ity') no-repeat;
   width: 190px;
   padding: 10px;
   margin-top: 15px;
   display: inline-block;
   margin-left: -50px;
   margin-bottom: -17px;
-  border: 2px solid black;
+  border: 3px solid black;
 }
 
 .quadrant-container {
-  /*margin-top: -190px;*/
+  margin-top: 25px;
   width: 600px;
   /*background-color: orange;*/
   margin-left: 40%;
@@ -42,11 +28,13 @@
 
 .userProdInput {
   font-size: 15px;
-  width: 90px;
+  width: 60px;
 }
 
 .quadrant-item:hover {
-  background-color: red;
+  background: url('http://previews.123rf.com/images/grigory_bruev/grigory_bruev1401/grigory_bruev140100036/24858064-Background-of-newly-plowed-field-ready-for-new-crops-Ploughed-field-in-autumn-Farm-agricultural-back-Stock-Photo.jpg') no-repeat;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
 
 .quadrantSelectButton {
@@ -56,20 +44,33 @@
   /*margin: auto;*/
 }
 
+.quadrantSelectButton:active{
+  background-color: orange;
+}
+
 .reserveButton {
-  font-size: 20px;
-  padding: 10px;
+  font-size: 15px;
+  /*padding: 10px;*/
+  height: 30px;
+  width: 175px;
+  background-color: orange;
+}
+
+.reserveButton:active{
+  background-color: yellow;
 }
 
 .dataFromDB {
-
+  display: inline-block;
+  /*color: #606060;*/
 }
 
-.productUserPopup {
-  background-color: lightpink;
-  visibility: visible;
+.dbNumber {
+  display: inline-block;
+  width: 20px;
+  text-align: center;
+  margin-left: 4px;
 }
 
-.productUserPopupHide {
 
-}
+

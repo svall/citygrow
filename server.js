@@ -12,14 +12,14 @@ const authRouter    = require('./routes/auth');
 const dbRouter = require('./routes/db.js');
 
 const app = express();
-const port = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 
 // app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'dist')));
 app.use(bodyParser.json());
 app.use(logger('dev'));
 
-app.listen(port, () => console.log('Server is listening on port', port));
+app.listen(PORT, () => console.log('Server is listening on port', PORT));
 
 
 
