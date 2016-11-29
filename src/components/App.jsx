@@ -250,8 +250,7 @@ class App extends Component {
       login: {
         username: data.name,
         password: data.password,
-        loggedIn: True,
-        id: data.id
+        id: data.id,
       }
 
     })})
