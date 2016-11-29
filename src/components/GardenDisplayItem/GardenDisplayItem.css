@@ -1,27 +1,5 @@
-/*.garden-item{
-  float: right;
-  height: 300px;
-  width: 200px;
-  overflow: auto;
-  border: 2px solid black;
-}
-*/
-/*.quadrant-container {
-  background-color: orange;
-  width: 300px;
-  height: 190px;
-}*/
-.garden-item {
-/*  background-color: lightblue;
-  margin-left: 525px;
-  width: 36vw;
-  padding: 10px;
-    margin-top: 70px;*/
-  /*margin-top: 100px;*/
-}
 
 #idQuadNum {
-  /*text-align: center;*/
   width: 100px;
   margin: auto;
   padding: auto;
@@ -29,7 +7,6 @@
 .quadrant-item {
   /*background-color: lightgreen;*/
   background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuRzsbRW3yjsVaiDGAqyaLFSkvyRdzZJDB6X8tLp4temRm4ity') no-repeat;
-  /*opacity: 0.5;*/
   width: 190px;
   padding: 10px;
   margin-top: 15px;
@@ -40,7 +17,7 @@
 }
 
 .quadrant-container {
-  /*margin-top: -190px;*/
+  margin-top: 25px;
   width: 600px;
   /*background-color: orange;*/
   margin-left: 40%;
@@ -67,6 +44,10 @@
   /*margin: auto;*/
 }
 
+.quadrantSelectButton:active{
+  background-color: orange;
+}
+
 .reserveButton {
   font-size: 15px;
   /*padding: 10px;*/
@@ -75,19 +56,21 @@
   background-color: orange;
 }
 
+.reserveButton:active{
+  background-color: yellow;
+}
+
 .dataFromDB {
   display: inline-block;
+  /*color: #606060;*/
 }
 
 .dbNumber {
-  display: inline;
+  display: inline-block;
+  width: 20px;
+  text-align: center;
+  margin-left: 4px;
 }
 
-.productUserPopup {
-  /*background-color: lightpink;*/
-  visibility: visible;
-}
 
-.productUserPopupHide {
 
-}

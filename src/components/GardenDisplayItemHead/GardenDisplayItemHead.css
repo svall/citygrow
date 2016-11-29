@@ -2,41 +2,39 @@
   display: inline;
 }
 
-/*.garden-item {
-  margin-top: 70px;
-}
-*/
-
 .garden-data {
-  background-color: pink;
+  /*background-color: pink;*/
   margin-left: 525px;
   width: 700px;
   height: 250px;
   padding: 10px;
-  margin-top: 40px;
+  margin-top: 50px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
 
+.selectedGdn {
+  background-color: lightgrey;
+  padding: 15px;
+  width: 260px;
+}
+
 .garden-item {
-  background-color: lightblue;
+  /*background-color: lightblue;*/
   display: inline-block;
-  /*margin-left: 525px;*/
   width: 350px;
   padding: 10px;
   top: 0px;
-  /*margin-top: -800px;*/
 }
 
 .produceLegend {
   display: inline-block;
-  background-color: grey;
+  /*background-color: grey;*/
   width: 170px;
   font-size: 13px;
   margin-left: 20px;
   border: 1px solid black;
-  /*height: 90px;*/
 }
 
 .instructionsSelect {
@@ -64,5 +62,4 @@
 
 .instructionsList {
   padding: 5px;
-  /*margin-left: 40px;*/
 }

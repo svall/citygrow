@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import GardenForm from './GardenForm/GardenForm.jsx';
-import GardenList from './GardenList/GardenList.jsx';
-import SignupForm from './Signup/SignupForm.jsx';
-import LoginForm from './Login/LoginForm.jsx';
-import Welcome from './Welcome/Welcome.jsx';
+import GardenForm from '../GardenForm/GardenForm.jsx';
+import GardenList from '../GardenList/GardenList.jsx';
+import SignupForm from '../Signup/SignupForm.jsx';
+import LoginForm from '../Login/LoginForm.jsx';
+import Welcome from '../Welcome/Welcome.jsx';
 // import GardenListItem from './GardenListItem/GardenListItem.jsx';
-import GardenDisplay from './GardenDisplay/GardenDisplay.jsx';
-import style from './App.css';
+import GardenDisplay from '../GardenDisplay/GardenDisplay.jsx';
+// import style from './App.css';
 
 class App extends Component {
 
@@ -20,12 +20,12 @@ class App extends Component {
       name: '',
       zipcode: '',
 
+      quadrants: [],
+      q1: 0,
       quad_id: 0,
       prod_quad: 0,
       user_quad: 0,
 
-      quadrants: [],
-      q1: false,
       signup: {
         username: '',
         password: ''
@@ -36,8 +36,8 @@ class App extends Component {
         password: ''
       }
     };
-    // this.updateIdQuadrant = this.updateIdQuadrant.bind(this);
   }
+
   // ====== GET ALL GARDENS AND GET GARDEN BY ID ======== //
   // displays the info for the garden clicked on from the garden list, it sets that garden's info to the "selected" state
   // with the id of the garden, it does a fetch call and gets from the quadrants table all quadrants with that garden id
@@ -163,9 +163,7 @@ class App extends Component {
         prod_quad: 0,
         user_quad: 0
     }))
-    console.log('state in app.js ', this.state.prod_quad)
     .then(this.getAllGardens())
-    .then(this.changeSelection(this.state.garden_id))
     .catch(err => console.log(err));
   }
 
@@ -192,7 +190,6 @@ class App extends Component {
   }
 
   updateFormLogInUsername(e) {
-    console.log(e.target.value);
     this.setState({
       login: {
         username: e.target.value,
@@ -202,7 +199,6 @@ class App extends Component {
   }
 
   updateFormLogInPassword(e) {
-    console.log(e.target.value);
     this.setState({
       login: {
         username: this.state.login.username,
@@ -212,7 +208,7 @@ class App extends Component {
   }
 
   handleSignUp() {
-    fetch('/db/gardens/users', {
+    fetch('/users', {
       headers: {
         'Content-Type': 'application/json'
       },
@@ -222,9 +218,13 @@ class App extends Component {
         password: this.state.signup.password
       })
     })
-    .then(r => r.json())
-    .then((data) => console.log(data))
-    .then(() => console.log('You have signed up!'))
+    .then(this.setState({
+      signup: {
+        username: '',
+        password: ''
+      }
+    }))
+    .then(this.alertInfo('You have signed up!'))
     .catch(err => console.log(err));
   }
 
@@ -255,22 +255,57 @@ class App extends Component {
     console.log(a,b);
   }
 
-
   render(){
     return (
       <div>
+        <header>
 
-        {this.props.children && React.cloneElement(this.props.children, {
-          state: 'test',
-          signup: this.state.signup,
-          login: this.state.login,
-          updateFormLogPassword: (event) => this.updateFormLogInPassword(event),
-          updateFormLogUsername: (event) => this.updateFormLogInUsername(event),
-          updateFormSignUsername: (event) => this.updateFormSignUpUsername(event),
-          updateFormSignPassword: (event) => this.updateFormSignUpPassword(event),
-          handleSign:()=> this.handleSignUp(),
-          handleLog:()=> this.handleLogIn()
-        })}
+
+        </header>
+        <GardenForm
+          name={this.state.name}
+          zipcode={this.state.zipcode}
+          user_id={this.state.user_id}
+          updateFormName={event => this.updateFormName(event)}
+          updateFormZip={event => this.updateFormZip(event)}
+          updateFormId={event => this.updateFormId(event)}
+          handleFormSubmit={event => this.handleFormSubmit()}
+          getLastGardenId={event => this.getLastGardenId(event)}
+          updateFormGardenId={event => this.updateFormGardenId(event)}
+          garden_id={this.state.garden_id}
+
+        />
+        <div className="gardenlist">
+          <GardenList
+            getAllGardens={this.getAllGardens.bind(this)}
+            collection={this.state.gardens}
+            changeSelection={this.changeSelection.bind(this)}
+          />
+        </div>
+        <div className="gardenDisplay">
+          <GardenDisplay
+            garden={this.state.selected}
+            garden_id={this.state.garden_id}
+            collection={this.state.quadrants}
+            quadrants={this.state.quadrants}
+            quad_id={this.state.quad_id}
+            prod_quad={this.state.prod_quad}
+            user_quad={this.state.user_quad}
+            updateIdQuadrant={event => this.updateIdQuadrant(event)}
+            updateProduceQuadrant={event => this.updateProduceQuadrant(event)}
+            updateUserQuadrant={event => this.updateUserQuadrant(event)}
+            handleQuadrantForm={event => this.handleQuadrantForm()}
+
+          />
+        </div>
+        <footer>
+          <div className="team">
+            <h3>Meat The Team </h3>
+              <ul>
+                <img src={'../Images/s.png'}/>
+            </ul>
+          </div>
+        </footer>
       </div>
     );
   }

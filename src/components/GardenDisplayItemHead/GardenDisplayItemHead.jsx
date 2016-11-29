@@ -3,23 +3,23 @@ import "./GardenDisplayItemHead.css";
 
 const divStyle = {
   color: 'red',
-  // textDecoration: 'underline',
-  // border: '1px solid black',
 };
 
 const GardenDisplayItemHead = props => (
-  // <div>
+
     <div className="garden-data">
       <div className="garden-item">
-        <h4>Garden Selected:
-          <div className="mainHeaderInfo" style={divStyle}> {props.name}</div>
-        </h4>
-        <h4>Id Number:
-          <div className="mainHeaderInfo" style={divStyle}> {props.garden_id}</div>
-        </h4>
-        <h4>Area Zipcode:
-          <div className="mainHeaderInfo" style={divStyle}> {props.zipcode}</div>
-        </h4>
+        <div className="selectedGdn">
+          <h4>Garden Selected:
+            <div className="mainHeaderInfo" style={divStyle}> {props.name}</div>
+          </h4>
+          <h4>Id Number:
+            <div className="mainHeaderInfo" style={divStyle}> {props.garden_id}</div>
+          </h4>
+          <h4>Area Zipcode:
+            <div className="mainHeaderInfo" style={divStyle}> {props.zipcode}</div>
+          </h4>
+        </div>
         <br></br>
         <div className="instructionsSelect">
           <p id="instructionText">Instructions to Select a Lot</p>
@@ -45,11 +45,10 @@ const GardenDisplayItemHead = props => (
         <li>Basil</li>
         <li>Sweet Potato</li>
         <li>Garlic</li>
-        <li>Peppers</li>
+        <li>Zucchini</li>
       </ol>
     </div>
   </div>
-
 );
 
 export default GardenDisplayItemHead;

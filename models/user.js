@@ -1,8 +1,9 @@
 const db = require('../lib/dbConnect.js');
 
 function createUser(req, res, next) {
- db.none(`INSERT INTO users (username, password) VALUES ($1, $2)`, [req.body.username, req.body.password])
-   .then(next())
+ db.one(`INSERT INTO users (name, password) VALUES ($1, $2) RETURNING *;`, [req.body.username, req.body.password])
+   .then((data) => res.rows = data)
+   .then(() => next())
    .catch((err) => {
      console.log(err);
      next(err);
