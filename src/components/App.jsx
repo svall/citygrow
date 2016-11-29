@@ -243,14 +243,17 @@ class App extends Component {
         password: this.state.login.password
       })
     })
-    .then(console.log(this.state.login.username))
-    .then(this.setState({
+    .then(r => r.json())
+    .then((data) => {
+      this.setState({
       login: {
-        username: '',
-        password: ''
+        username: data.name,
+        password: data.password
       }
-    }))
-    .then(this.onSuccessfulLogIn)
+
+    })})
+    .then(console.log(this.state.login.username))
+    .then(console.log('succesful login'))
     .catch(err => console.log(err));
   }
 

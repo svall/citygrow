@@ -10,8 +10,17 @@ function createUser(req, res, next) {
    });
 }
 
-function findByUsername(username) {
- return db.one('SELECT * FROM users WHERE username = $1', [username]);
+function findByUsername(req, res, next) {
+db.one('SELECT * FROM users WHERE name = $1', [req.body.username])
+  .then((data) => res.rows = data)
+  .then(() => next())
+  .catch(err => next(err));
+}
+function authenticate(req, res, next) {
+  if(res.rows.password === req.body.password){
+    next();
+  }
+
 }
 
 module.exports = {
