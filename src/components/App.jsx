@@ -164,8 +164,11 @@ class App extends Component {
         user_quad: 0
     }))
     console.log('state in app.js ', this.state.prod_quad)
-    .then(this.getAllGardens())
-    .then(this.changeSelection(this.state.garden_id))
+    // .then(() => this.changeSelection(this.state.garden_id))
+    // .then(() => this.getAllGardens())
+    // .then(
+      // (this.setTimeout(this.changeSelection(this.state.garden_id)), 500)
+    //   )
     .catch(err => console.log(err));
   }
 
