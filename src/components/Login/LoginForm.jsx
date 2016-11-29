@@ -27,7 +27,7 @@ class LoginForm extends Component {
         <button onClick={this.props.handleLog}>
           Log In!
         </button>
-        </Link>
+         </Link>
       </div>
       </div>
     );

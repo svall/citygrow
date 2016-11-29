@@ -274,7 +274,8 @@ class App extends Component {
     return (
       <div>
          <header>
-         <h1>Welcome, {this.props.username}</h1>
+         <h1>Welcome, {this.props.login.username}</h1>
+
 
        </header>
 
@@ -324,7 +325,7 @@ class App extends Component {
 
        <footer>
         <div className="team">
-        <h3>Meat The Team </h3>
+        <h3>Meet The Team </h3>
           <ul>
             <img src={'../Images/s.png'}/>
 
