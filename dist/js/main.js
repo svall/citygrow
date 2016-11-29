@@ -7521,7 +7521,7 @@
   \**********************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var _react=__webpack_require__(/*! react */ 1);var _react2=_interopRequireDefault(_react);var _App=__webpack_require__(/*! ./App.jsx */ 179);var _App2=_interopRequireDefault(_App);var _LoginForm=__webpack_require__(/*! ./Login/LoginForm.jsx */ 188);var _LoginForm2=_interopRequireDefault(_LoginForm);var _Welcome=__webpack_require__(/*! ./Welcome/Welcome.jsx */ 190);var _Welcome2=_interopRequireDefault(_Welcome);var _SignupForm=__webpack_require__(/*! ./Signup/SignupForm.jsx */ 186);var _SignupForm2=_interopRequireDefault(_SignupForm);var _GardenPage=__webpack_require__(/*! ./GardenPage/GardenPage.jsx */ 254);var _GardenPage2=_interopRequireDefault(_GardenPage);var _reactRouter=__webpack_require__(/*! react-router */ 192);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}module.exports=_react2.default.createElement(_reactRouter.Route,{path:'/',component:_App2.default},_react2.default.createElement(_reactRouter.Route,{path:'welcome',component:_Welcome2.default}),_react2.default.createElement(_reactRouter.Route,{path:'/login',component:_LoginForm2.default}),_react2.default.createElement(_reactRouter.Route,{path:'/signup',component:_SignupForm2.default}),_react2.default.createElement(_reactRouter.Route,{path:'/home',component:_GardenPage2.default}));
+	'use strict';var _react=__webpack_require__(/*! react */ 1);var _react2=_interopRequireDefault(_react);var _App=__webpack_require__(/*! ./App.jsx */ 179);var _App2=_interopRequireDefault(_App);var _LoginForm=__webpack_require__(/*! ./Login/LoginForm.jsx */ 188);var _LoginForm2=_interopRequireDefault(_LoginForm);var _Welcome=__webpack_require__(/*! ./Welcome/Welcome.jsx */ 190);var _Welcome2=_interopRequireDefault(_Welcome);var _SignupForm=__webpack_require__(/*! ./Signup/SignupForm.jsx */ 186);var _SignupForm2=_interopRequireDefault(_SignupForm);var _GardenPage=__webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./GardenPage/GardenPage.jsx\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));var _GardenPage2=_interopRequireDefault(_GardenPage);var _reactRouter=__webpack_require__(/*! react-router */ 192);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}module.exports=_react2.default.createElement(_reactRouter.Route,{path:'/',component:_App2.default},_react2.default.createElement(_reactRouter.Route,{path:'welcome',component:_Welcome2.default}),_react2.default.createElement(_reactRouter.Route,{path:'/login',component:_LoginForm2.default}),_react2.default.createElement(_reactRouter.Route,{path:'/signup',component:_SignupForm2.default}),_react2.default.createElement(_reactRouter.Route,{path:'/home',component:_GardenPage2.default}));
 
 /***/ },
 /* 179 */
@@ -7532,12 +7532,35 @@
 
 	'use strict';Object.defineProperty(exports,"__esModule",{value:true});var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();var _react=__webpack_require__(/*! react */ 1);var _react2=_interopRequireDefault(_react);var _GardenForm=__webpack_require__(/*! ./GardenForm/GardenForm.jsx */ 180);var _GardenForm2=_interopRequireDefault(_GardenForm);var _GardenList=__webpack_require__(/*! ./GardenList/GardenList.jsx */ 182);var _GardenList2=_interopRequireDefault(_GardenList);var _SignupForm=__webpack_require__(/*! ./Signup/SignupForm.jsx */ 186);var _SignupForm2=_interopRequireDefault(_SignupForm);var _LoginForm=__webpack_require__(/*! ./Login/LoginForm.jsx */ 188);var _LoginForm2=_interopRequireDefault(_LoginForm);var _Welcome=__webpack_require__(/*! ./Welcome/Welcome.jsx */ 190);var _Welcome2=_interopRequireDefault(_Welcome);var _GardenDisplay=__webpack_require__(/*! ./GardenDisplay/GardenDisplay.jsx */ 247);var _GardenDisplay2=_interopRequireDefault(_GardenDisplay);var _App=__webpack_require__(/*! ./App.css */ 253);var _App2=_interopRequireDefault(_App);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call&&(typeof call==="object"||typeof call==="function")?call:self;}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass);}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass;}// import GardenListItem from './GardenListItem/GardenListItem.jsx';
 	var App=function(_Component){_inherits(App,_Component);function App(props){_classCallCheck(this,App);// console.log(this);
-	var _this=_possibleConstructorReturn(this,(App.__proto__||Object.getPrototypeOf(App)).call(this));_this.state={gardens:[],selected:'',garden_id:'',name:'',zipcode:'',// user_id: '',
-	// produce: 0,
-	// user: 0,
-	quad_id:0,prod_quad:0,user_quad:0,quadrants:[],q1:false,signup:{username:'',password:''},login:{loggedIn:false,username:'',password:'',id:''}};// this.updateIdQuadrant = this.updateIdQuadrant.bind(this);
-	return _this;}//________________USERS________________
-	_createClass(App,[{key:'updateFormSignUpUsername',value:function updateFormSignUpUsername(e){console.log(e.target.value);this.setState({signup:{username:e.target.value,password:this.state.signup.password}});}},{key:'updateFormSignUpPassword',value:function updateFormSignUpPassword(e){console.log(e.target.value);this.setState({signup:{username:this.state.signup.username,password:e.target.value}});}},{key:'updateFormLogInUsername',value:function updateFormLogInUsername(e){console.log(e.target.value);this.setState({login:{username:e.target.value,password:this.state.login.password}});}},{key:'updateFormLogInPassword',value:function updateFormLogInPassword(e){console.log(e.target.value);this.setState({login:{username:this.state.login.username,password:e.target.value}});}},{key:'handleSignUp',value:function handleSignUp(){fetch('/db/gardens/users',{headers:{'Content-Type':'application/json'},method:'POST',body:JSON.stringify({username:this.state.signup.username,password:this.state.signup.password})}).then(function(r){return r.json();}).then(function(data){return console.log(data);}).then(function(){return console.log('You have signed up!');}).catch(function(err){return console.log(err);});}},{key:'handleLogIn',value:function handleLogIn(){var _this2=this;console.log('test');fetch('/auth',{headers:{'Content-Type':'application/json'},method:'POST',body:JSON.stringify({username:this.state.login.username,password:this.state.login.password})}).then(function(r){return r.json();}).then(function(data){_this2.setState({login:{username:data.name,password:data.password,loggedIn:True,id:data.id}});}).then(console.log(this.state.login.id)).then(console.log('succesful login')).catch(function(err){return console.log(err);});}},{key:'onSuccessfulLogIn',value:function onSuccessfulLogIn(a,b){console.log(a,b);}},{key:'render',value:function render(){var _this3=this;return _react2.default.createElement('div',null,this.props.children&&_react2.default.cloneElement(this.props.children,{state:'test',signup:this.state.signup,login:this.state.login,updateFormLogPassword:function updateFormLogPassword(event){return _this3.updateFormLogInPassword(event);},updateFormLogUsername:function updateFormLogUsername(event){return _this3.updateFormLogInUsername(event);},updateFormSignUsername:function updateFormSignUsername(event){return _this3.updateFormSignUpUsername(event);},updateFormSignPassword:function updateFormSignPassword(event){return _this3.updateFormSignUpPassword(event);},handleSign:function handleSign(){return _this3.handleSignUp();},handleLog:function handleLog(){return _this3.handleLogIn();}}));}}]);return App;}(_react.Component);exports.default=App;
+	var _this=_possibleConstructorReturn(this,(App.__proto__||Object.getPrototypeOf(App)).call(this));_this.state={gardens:[],selected:'',garden_id:'',name:'',zipcode:'',quad_id:0,prod_quad:0,user_quad:0,quadrants:[],q1:false,signup:{username:'',password:''},login:{loggedIn:false,username:'',password:'',id:''}};// this.updateIdQuadrant = this.updateIdQuadrant.bind(this);
+	return _this;}// ====== GET ALL GARDENS AND GET GARDEN BY ID ======== //
+	// displays the info for the garden clicked on from the garden list, it sets that garden's info to the "selected" state
+	// with the id of the garden, it does a fetch call and gets from the quadrants table all quadrants with that garden id
+	_createClass(App,[{key:'changeSelection',value:function changeSelection(num){var _this2=this;// getOneGarden()
+	this.setState({selected:this.state.gardens[num],garden_id:this.state.gardens[num].id});// console.log('garden id in app.js', this.state.gardens[num].id);
+	fetch('/db/gardens/'+this.state.gardens[num].id).then(function(r){return r.json();}).then(function(data){_this2.setState({quadrants:data});// console.log('************App.jsxs data: ', data[0].quadrant);
+	}).catch(function(err){return console.log(err);});// console.log("this is the state of selected ", this.state.garden_id);
+	}// gets all gardens from the gardens db, saves in array in "gardens" state
+	},{key:'getAllGardens',value:function getAllGardens(){var _this3=this;fetch('/db/gardens').then(function(r){return r.json();}).then(function(data){_this3.setState({gardens:data});// console.log("this is gardens all: ", data);
+	}).catch(function(err){return console.log(err);});}// ====== GARDEN CREATION FORM ======== //
+	// form elements to update info about new gardens
+	},{key:'updateFormName',value:function updateFormName(e){this.setState({name:e.target.value});// console.log(this.state.name);
+	}},{key:'updateFormZip',value:function updateFormZip(e){this.setState({zipcode:e.target.value});// console.log(this.state.zipcode);
+	}},{key:'updateFormId',value:function updateFormId(e){this.setState({user_id:e.target.value});// console.log(this.state.user_id);
+	}// with a post method, handleFormSubmit() adds a new garden to the db
+	},{key:'handleFormSubmit',value:function handleFormSubmit(){fetch('/db/gardens',{headers:{'Content-Type':'application/json'},method:'POST',body:JSON.stringify({name:this.state.name,zipcode:this.state.zipcode,user_id:this.state.user_id})}).then(this.setState({name:'',zipcode:'',user_id:''})).then(this.getAllGardens()).catch(function(err){return console.log(err);});}// ====== QUADRANTS FORM ======== //
+	},{key:'updateIdQuadrant',value:function updateIdQuadrant(e){var quadrant_id=Number.parseInt(e.target.value);this.setState({quad_id:quadrant_id});// console.log('updating state for quad_id ', this.state.quad_id);
+	}},{key:'updateProduceQuadrant',value:function updateProduceQuadrant(e){var prod_quadrant=Number.parseInt(e.target.value);this.setState({prod_quad:prod_quadrant});// console.log('updating state for prod_quad ', this.state.prod_quad);
+	}},{key:'updateUserQuadrant',value:function updateUserQuadrant(e){var user_quadrant=Number.parseInt(e.target.value);this.setState({user_quad:user_quadrant});// console.log('updating state for user_quad ', this.state.user_quad);
+	}// with a post method, handleFormSubmit() adds a new garden to the db
+	},{key:'handleQuadrantForm',value:function handleQuadrantForm(){// console.log('in app quad form quad Id', this.state.quad_id)
+	fetch('/db/gardens/quadrants/'+this.state.quad_id,{headers:{'Content-Type':'application/json'},method:'POST',body:JSON.stringify({quad_id:this.state.quad_id,prod_quad:this.state.prod_quad,user_quad:this.state.user_quad})}).then(this.setState({quad_id:0,prod_quad:0,user_quad:0}));console.log('state in app.js ',this.state.prod_quad)// .then(() => this.changeSelection(this.state.garden_id))
+	// .then(() => this.getAllGardens())
+	// .then(
+	// (this.setTimeout(this.changeSelection(this.state.garden_id)), 500)
+	//   )
+	.catch(function(err){return console.log(err);});}//________________USERS________________
+	},{key:'updateFormSignUpUsername',value:function updateFormSignUpUsername(e){console.log(e.target.value);this.setState({signup:{username:e.target.value,password:this.state.signup.password}});}},{key:'updateFormSignUpPassword',value:function updateFormSignUpPassword(e){console.log(e.target.value);this.setState({signup:{username:this.state.signup.username,password:e.target.value}});}},{key:'updateFormLogInUsername',value:function updateFormLogInUsername(e){console.log(e.target.value);this.setState({login:{username:e.target.value,password:this.state.login.password}});}},{key:'updateFormLogInPassword',value:function updateFormLogInPassword(e){console.log(e.target.value);this.setState({login:{username:this.state.login.username,password:e.target.value}});}},{key:'handleSignUp',value:function handleSignUp(){fetch('/db/gardens/users',{headers:{'Content-Type':'application/json'},method:'POST',body:JSON.stringify({username:this.state.signup.username,password:this.state.signup.password})}).then(function(r){return r.json();}).then(function(data){return console.log(data);}).then(function(){return console.log('You have signed up!');}).catch(function(err){return console.log(err);});}},{key:'handleLogIn',value:function handleLogIn(){var _this4=this;console.log('test');fetch('/auth',{headers:{'Content-Type':'application/json'},method:'POST',body:JSON.stringify({username:this.state.login.username,password:this.state.login.password})}).then(function(r){return r.json();}).then(function(data){_this4.setState({login:{username:data.name,password:data.password,loggedIn:True,id:data.id}});}).then(console.log(this.state.login.id)).then(console.log('succesful login')).catch(function(err){return console.log(err);});}},{key:'onSuccessfulLogIn',value:function onSuccessfulLogIn(a,b){console.log(a,b);}},{key:'render',value:function render(){var _this5=this;return _react2.default.createElement('div',null,this.props.children&&_react2.default.cloneElement(this.props.children,{state:'test',signup:this.state.signup,login:this.state.login,updateFormLogPassword:function updateFormLogPassword(event){return _this5.updateFormLogInPassword(event);},updateFormLogUsername:function updateFormLogUsername(event){return _this5.updateFormLogInUsername(event);},updateFormSignUsername:function updateFormSignUsername(event){return _this5.updateFormSignUpUsername(event);},updateFormSignPassword:function updateFormSignPassword(event){return _this5.updateFormSignUpPassword(event);},handleSign:function handleSign(){return _this5.handleSignUp();},handleLog:function handleLog(){return _this5.handleLogIn();}}));}}]);return App;}(_react.Component);exports.default=App;
 
 /***/ },
 /* 180 */
@@ -8558,8 +8581,7 @@
 
 	'use strict';Object.defineProperty(exports,"__esModule",{value:true});var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();var _react=__webpack_require__(/*! react */ 1);var _react2=_interopRequireDefault(_react);__webpack_require__(/*! ./gardenDisplay.css */ 248);var _GardenDisplayItem=__webpack_require__(/*! ../GardenDisplayItem/GardenDisplayItem.jsx */ 249);var _GardenDisplayItem2=_interopRequireDefault(_GardenDisplayItem);var _GardenDisplayItemHead=__webpack_require__(/*! ../GardenDisplayItemHead/GardenDisplayItemHead.jsx */ 251);var _GardenDisplayItemHead2=_interopRequireDefault(_GardenDisplayItemHead);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call&&(typeof call==="object"||typeof call==="function")?call:self;}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass);}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass;}var GardenDisplay=function(_Component){_inherits(GardenDisplay,_Component);function GardenDisplay(){_classCallCheck(this,GardenDisplay);return _possibleConstructorReturn(this,(GardenDisplay.__proto__||Object.getPrototypeOf(GardenDisplay)).apply(this,arguments));}_createClass(GardenDisplay,[{key:'showQuadrants',// maps throught the quadrants array saved in "quadrants" state, then passes to GardenDisplayItem the data for each quadrant
 	value:function showQuadrants(quadrants){var _this2=this;// console.log('in gard disp', this.props.quadrants);
-	return this.props.quadrants.map(function(quadrants,i){return _react2.default.createElement(_GardenDisplayItem2.default,{key:i,name:quadrants.name,user:quadrants.user,produce:quadrants.produce,quadrants:quadrants.quadrant,q1:i,updateIdQuadrant:_this2.props.updateIdQuadrant,updateProduceQuadrant:_this2.props.updateProduceQuadrant,updateUserQuadrant:_this2.props.updateUserQuadrant,handleQuadrantForm:_this2.props.handleQuadrantForm,quad_id:_this2.props.quad_id,prod_quad:_this2.props.prod_quad,user_quad:_this2.props.user_quad// q2={this.props.q2}
-	});});}},{key:'render',value:function render(){return _react2.default.createElement('div',null,_react2.default.createElement(_GardenDisplayItemHead2.default,{name:this.props.garden.name,zipcode:this.props.garden.zipcode,garden_id:this.props.garden_id}),_react2.default.createElement('div',{className:'quadrant-container'},this.showQuadrants(this.props.quadrants)));}}]);return GardenDisplay;}(_react.Component);exports.default=GardenDisplay;
+	return this.props.quadrants.map(function(quadrants,i){return _react2.default.createElement(_GardenDisplayItem2.default,{key:i,name:quadrants.name,user:quadrants.user,produce:quadrants.produce,quadrants:quadrants.quadrant,q1:i,updateIdQuadrant:_this2.props.updateIdQuadrant,updateProduceQuadrant:_this2.props.updateProduceQuadrant,updateUserQuadrant:_this2.props.updateUserQuadrant,handleQuadrantForm:_this2.props.handleQuadrantForm,quad_id:_this2.props.quad_id,prod_quad:_this2.props.prod_quad,user_quad:_this2.props.user_quad});});}},{key:'render',value:function render(){return _react2.default.createElement('div',null,_react2.default.createElement(_GardenDisplayItemHead2.default,{name:this.props.garden.name,zipcode:this.props.garden.zipcode,garden_id:this.props.garden_id}),_react2.default.createElement('div',{className:'quadrant-container'},this.showQuadrants(this.props.quadrants)));}}]);return GardenDisplay;}(_react.Component);exports.default=GardenDisplay;
 
 /***/ },
 /* 248 */
@@ -8577,126 +8599,7 @@
   \****************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';Object.defineProperty(exports,"__esModule",{value:true});var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();var _react=__webpack_require__(/*! react */ 1);var _react2=_interopRequireDefault(_react);__webpack_require__(/*! ./GardenDisplayItem.css */ 250);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call&&(typeof call==="object"||typeof call==="function")?call:self;}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass);}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass;}// function assignment() {
-	//   htmlFor(let i = 0; i < 9; i++) {
-	//   let product = document.querySelectorAll(".productLength")[1];
-	//   console.log('product is ', product)
-	//   if(product === null) {
-	//     console.log('product is null')
-	//   }
-	//   else {
-	//     console.log('product is not null')
-	//   }
-	// }
-	// <h4 className="productLength">2nd - Produce: {this.props.produce}</h4>
-	// }
-	// <label><h4 className="dataFromDB">3rd - User: <p style={"font-weight: bold; color:red"}>{this.props.user}</p></h4>
-	var GardenDisplayItem=function(_Component){_inherits(GardenDisplayItem,_Component);function GardenDisplayItem(){_classCallCheck(this,GardenDisplayItem);return _possibleConstructorReturn(this,(GardenDisplayItem.__proto__||Object.getPrototypeOf(GardenDisplayItem)).apply(this,arguments));}_createClass(GardenDisplayItem,[{key:'render',value:function render(){var _this2=this;// assignment();
-	return(// <div>
-	_react2.default.createElement('div',{className:'quadrant-item',id:this.props.q1},_react2.default.createElement('form',{className:'quadrantForm'},_react2.default.createElement('h4',null,'1st - Chose Quadrant: ',this.props.q1),_react2.default.createElement('button',{className:'quadrantSelectButton',type:'button',value:this.props.quadrants,onClick:this.props.updateIdQuadrant},'SELECT THIS QUADRANT'),_react2.default.createElement('br',null),_react2.default.createElement('br',null),_react2.default.createElement('div',{className:'productUserPopup'},_react2.default.createElement('input',{type:'hidden',value:this.props.quadrants}),_react2.default.createElement('label',null,_react2.default.createElement('h4',{className:'dataFromDB'},'2nd - Produce: ',this.props.produce),_react2.default.createElement('input',{className:'userProdInput',type:'text',placeholder:'Produce',onChange:this.props.updateProduceQuadrant})),_react2.default.createElement('br',null),_react2.default.createElement('label',null,_react2.default.createElement('h4',{className:'dataFromDB'},'3rd - User: ',this.props.user),_react2.default.createElement('input',{className:'userProdInput',type:'text',placeholder:'User Name',onChange:this.props.updateUserQuadrant})),_react2.default.createElement('br',null),_react2.default.createElement('br',null),_react2.default.createElement('input',{className:'reserveButton',type:'button',name:'submit',value:'RESERVE AREA',onClick:function onClick(){return _this2.props.handleQuadrantForm(_this2.props.quadrants);}}))))// </div>
-	);//   }
-	}}]);return GardenDisplayItem;}(_react.Component);// const GardenDisplayItem = props => (
-	// const GardenDisplayItem = props => (
-	//   <div>
-	//     <div className="quadrant-item">
-	//       <form className="quadrantForm">
-	//         <div>Quadrant #: {props.q1}</div>
-	//         <button
-	//           className="quadrantSelectButton"
-	//           type="button"
-	//           value={props.quadrants}
-	//           onClick={props.updateIdQuadrant}
-	//         >SELECT</button><br></br><br></br>
-	//         <div className="productUserPopup">
-	//           <label>
-	//             <input
-	//               type="hidden"
-	//               value={props.quadrants}
-	//               // name={props.quadrants}
-	//               // onClick={props.activateQuadrant}
-	//               // onChange={props.updateIdQuadrant}
-	//               // onClick={() => props.handleQuadrantForm(props.quad_id)}
-	//             />
-	//           </label>
-	//           <label>Produce Assigned:
-	//             <p>{props.produce}</p>
-	//             <input
-	//               type="text"
-	//               placeholder="Produce"
-	//               onChange={props.updateProduceQuadrant}
-	//             />
-	//           </label><br></br>
-	//           <label>User Assigned:
-	//             <p>{props.user}</p>
-	//             <input
-	//               type="text"
-	//               placeholder="User Name"
-	//               onChange={props.updateUserQuadrant}
-	//             />
-	//           </label><br></br>
-	//           <input
-	//               type="button"
-	//               name="submit"
-	//               value="RESERVE AREA"
-	//               // onClick={props.activateQuadrant}
-	//               // onChange={props.updateIdQuadrant}
-	//               onClick={() => props.handleQuadrantForm(props.quadrants)}
-	//             />
-	//           </div>
-	//       </form>
-	//     </div>
-	//   </div>
-	// );
-	// const GardenDisplayItem = props => (
-	//   <div className="garden-item">
-	//     <form>
-	//       <div>Quadrant #: {props.q1}</div>
-	//       <div>Quad ID: {props.quadrants}</div><br></br>
-	//       <button
-	//         type="button"
-	//         value={props.quadrants}
-	//         onClick={props.updateIdQuadrant}
-	//       >SELECT</button>
-	//       <label>Quadrant Number:
-	//         <input
-	//           type="text"
-	//           value={props.quadrants}
-	//           // name={props.quadrants}
-	//           // onClick={props.activateQuadrant}
-	//           onChange={props.updateIdQuadrant}
-	//           // onClick={() => props.handleQuadrantForm(props.quad_id)}
-	//         />
-	//       </label><br></br>
-	//       <label>Produce Assigned:
-	//         <p>{props.produce}</p>
-	//         <input
-	//           type="text"
-	//           placeholder="Produce"
-	//           onChange={props.updateProduceQuadrant}
-	//         />
-	//       </label><br></br>
-	//       <label>User Assigned:
-	//         <p>{props.user}</p>
-	//         <input
-	//           type="text"
-	//           placeholder="User Name"
-	//           onChange={props.updateUserQuadrant}
-	//         />
-	//       </label><br></br>
-	//       <input
-	//           type="button"
-	//           name="submit"
-	//           value="RESERVE LAND"
-	//           // onClick={props.activateQuadrant}
-	//           // onChange={props.updateIdQuadrant}
-	//           onClick={() => props.handleQuadrantForm(props.quadrants)}
-	//         />
-	//     </form>
-	//     <br>
-	//     </br>
-	//   </div>
-	// );
-	exports.default=GardenDisplayItem;
+	'use strict';Object.defineProperty(exports,"__esModule",{value:true});var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();var _react=__webpack_require__(/*! react */ 1);var _react2=_interopRequireDefault(_react);__webpack_require__(/*! ./GardenDisplayItem.css */ 250);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call&&(typeof call==="object"||typeof call==="function")?call:self;}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass);}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass;}var divStyle={color:'#7f0000',fontWeight:'bold',backgroundColor:'lightyellow'};var GardenDisplayItem=function(_Component){_inherits(GardenDisplayItem,_Component);function GardenDisplayItem(){_classCallCheck(this,GardenDisplayItem);return _possibleConstructorReturn(this,(GardenDisplayItem.__proto__||Object.getPrototypeOf(GardenDisplayItem)).apply(this,arguments));}_createClass(GardenDisplayItem,[{key:'render',value:function render(){var _this2=this;return _react2.default.createElement('div',{className:'quadrant-item',id:this.props.q1},_react2.default.createElement('form',{className:'quadrantForm'},_react2.default.createElement('button',{className:'quadrantSelectButton',type:'button',value:this.props.quadrants,onClick:this.props.updateIdQuadrant},'SELECT AREA # ',this.props.q1+1),_react2.default.createElement('br',null),_react2.default.createElement('br',null),_react2.default.createElement('div',{className:'productUserPopup'},_react2.default.createElement('input',{type:'hidden',value:this.props.quadrants}),_react2.default.createElement('h4',{className:'dataFromDB'},'Produce planted: '),_react2.default.createElement('h2',{className:'dbNumber',style:divStyle},' ',this.props.produce,' '),_react2.default.createElement('br',null),_react2.default.createElement('input',{className:'userProdInput',type:'text',placeholder:'Prod. ID',onChange:this.props.updateProduceQuadrant}),_react2.default.createElement('br',null),_react2.default.createElement('h4',{className:'dataFromDB'},'Current User: '),_react2.default.createElement('h2',{className:'dbNumber',style:divStyle},' ',this.props.user,' '),_react2.default.createElement('br',null),_react2.default.createElement('input',{className:'userProdInput',type:'text',placeholder:'User ID',onChange:this.props.updateUserQuadrant}),_react2.default.createElement('br',null),_react2.default.createElement('br',null),_react2.default.createElement('input',{className:'reserveButton',type:'button',name:'submit',value:'RESERVE',onClick:function onClick(){return _this2.props.handleQuadrantForm(_this2.props.quadrants);}}))));}}]);return GardenDisplayItem;}(_react.Component);exports.default=GardenDisplayItem;
 
 /***/ },
 /* 250 */
@@ -8714,7 +8617,7 @@
   \************************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";Object.defineProperty(exports,"__esModule",{value:true});var _react=__webpack_require__(/*! react */ 1);var _react2=_interopRequireDefault(_react);__webpack_require__(/*! ./GardenDisplayItemHead.css */ 252);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}var GardenDisplayItemHead=function GardenDisplayItemHead(props){return _react2.default.createElement("div",null,_react2.default.createElement("div",{className:"garden-item"},_react2.default.createElement("p",null,"Garden Id: ",props.garden_id),_react2.default.createElement("p",null,"Garden Zipcode: ",props.zipcode),_react2.default.createElement("p",null,"Garden Name: ",props.name)));};exports.default=GardenDisplayItemHead;
+	'use strict';Object.defineProperty(exports,"__esModule",{value:true});var _react=__webpack_require__(/*! react */ 1);var _react2=_interopRequireDefault(_react);__webpack_require__(/*! ./GardenDisplayItemHead.css */ 252);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}var divStyle={color:'red'};var GardenDisplayItemHead=function GardenDisplayItemHead(props){return _react2.default.createElement('div',{className:'garden-data'},_react2.default.createElement('div',{className:'garden-item'},_react2.default.createElement('div',{className:'selectedGdn'},_react2.default.createElement('h4',null,'Garden Selected:',_react2.default.createElement('div',{className:'mainHeaderInfo',style:divStyle},' ',props.name)),_react2.default.createElement('h4',null,'Id Number:',_react2.default.createElement('div',{className:'mainHeaderInfo',style:divStyle},' ',props.garden_id)),_react2.default.createElement('h4',null,'Area Zipcode:',_react2.default.createElement('div',{className:'mainHeaderInfo',style:divStyle},' ',props.zipcode))),_react2.default.createElement('br',null),_react2.default.createElement('div',{className:'instructionsSelect'},_react2.default.createElement('p',{id:'instructionText'},'Instructions to Select a Lot'),_react2.default.createElement('ol',{className:'instructionsList'},_react2.default.createElement('li',null,'Click the button with the Lot number you want to use'),_react2.default.createElement('li',null,'If no produce has been planted, add the ID of the produce to be planted (*Produce ID legend on the right)'),_react2.default.createElement('li',null,'Enter your user ID, if the Lot doesn\'t have one assigned'),_react2.default.createElement('li',null,'Confirm the reservation with the "Reserve" button')))),_react2.default.createElement('div',{className:'produceLegend'},_react2.default.createElement('p',{id:'prodDescription'},'Produce ID Legend:'),_react2.default.createElement('ol',{className:'produceList'},_react2.default.createElement('li',null,'Carrot'),_react2.default.createElement('li',null,'Pepper'),_react2.default.createElement('li',null,'Cilantro'),_react2.default.createElement('li',null,'Tomato'),_react2.default.createElement('li',null,'Beets'),_react2.default.createElement('li',null,'Beans'),_react2.default.createElement('li',null,'Potato'),_react2.default.createElement('li',null,'Pumpkin'),_react2.default.createElement('li',null,'Basil'),_react2.default.createElement('li',null,'Sweet Potato'),_react2.default.createElement('li',null,'Garlic'),_react2.default.createElement('li',null,'Zucchini'))));};exports.default=GardenDisplayItemHead;
 
 /***/ },
 /* 252 */
@@ -8733,57 +8636,6 @@
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 254 */
-/*!**************************************************!*\
-  !*** ./src/components/GardenPage/GardenPage.jsx ***!
-  \**************************************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';Object.defineProperty(exports,"__esModule",{value:true});var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();var _react=__webpack_require__(/*! react */ 1);var _react2=_interopRequireDefault(_react);var _GardenForm=__webpack_require__(/*! ../GardenForm/GardenForm.jsx */ 180);var _GardenForm2=_interopRequireDefault(_GardenForm);var _GardenList=__webpack_require__(/*! ../GardenList/GardenList.jsx */ 182);var _GardenList2=_interopRequireDefault(_GardenList);var _SignupForm=__webpack_require__(/*! ../Signup/SignupForm.jsx */ 186);var _SignupForm2=_interopRequireDefault(_SignupForm);var _LoginForm=__webpack_require__(/*! ../Login/LoginForm.jsx */ 188);var _LoginForm2=_interopRequireDefault(_LoginForm);var _Welcome=__webpack_require__(/*! ../Welcome/Welcome.jsx */ 190);var _Welcome2=_interopRequireDefault(_Welcome);var _GardenDisplay=__webpack_require__(/*! ../GardenDisplay/GardenDisplay.jsx */ 247);var _GardenDisplay2=_interopRequireDefault(_GardenDisplay);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call&&(typeof call==="object"||typeof call==="function")?call:self;}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass);}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass;}// import GardenListItem from './GardenListItem/GardenListItem.jsx';
-	// import style from './App.css';
-	var App=function(_Component){_inherits(App,_Component);function App(props){_classCallCheck(this,App);// console.log(this);
-	var _this=_possibleConstructorReturn(this,(App.__proto__||Object.getPrototypeOf(App)).call(this));_this.state={gardens:[],selected:'',garden_id:'',name:'',zipcode:'',// user_id: '',
-	// produce: 0,
-	// user: 0,
-	quad_id:0,prod_quad:0,user_quad:0,quadrants:[],q1:false,signup:{username:'',password:''},login:{loggedIn:false,username:'',password:''}};// this.updateIdQuadrant = this.updateIdQuadrant.bind(this);
-	return _this;}// ====== GET ALL GARDENS AND GET GARDEN BY ID ======== //
-	// displays the info for the garden clicked on from the garden list, it sets that garden's info to the "selected" state
-	// with the id of the garden, it does a fetch call and gets from the quadrants table all quadrants with that garden id
-	_createClass(App,[{key:'changeSelection',value:function changeSelection(num){var _this2=this;// getOneGarden()
-	this.setState({selected:this.state.gardens[num],garden_id:this.state.gardens[num].id});// console.log('garden id in app.js', this.state.gardens[num].id);
-	fetch('/db/gardens/'+this.state.gardens[num].id).then(function(r){return r.json();}).then(function(data){_this2.setState({quadrants:data});// console.log('************App.jsxs data: ', data[0].quadrant);
-	}).catch(function(err){return console.log(err);});// console.log("this is the state of selected ", this.state.garden_id);
-	}// gets all gardens from the gardens db, saves in array in "gardens" state
-	},{key:'getAllGardens',value:function getAllGardens(){var _this3=this;fetch('/db/gardens').then(function(r){return r.json();}).then(function(data){_this3.setState({gardens:data});// console.log("this is gardens all: ", data);
-	}).catch(function(err){return console.log(err);});}// ====== GARDEN CREATION FORM ======== //
-	// form elements to update info about new gardens
-	},{key:'updateFormName',value:function updateFormName(e){this.setState({name:e.target.value});// console.log(this.state.name);
-	}},{key:'updateFormZip',value:function updateFormZip(e){this.setState({zipcode:e.target.value});// console.log(this.state.zipcode);
-	}},{key:'updateFormId',value:function updateFormId(e){this.setState({user_id:e.target.value});// console.log(this.state.user_id);
-	}// with a post method, handleFormSubmit() adds a new garden to the db
-	},{key:'handleFormSubmit',value:function handleFormSubmit(){fetch('/db/gardens',{headers:{'Content-Type':'application/json'},method:'POST',body:JSON.stringify({name:this.state.name,zipcode:this.state.zipcode,user_id:this.state.user_id})}).then(this.setState({name:'',zipcode:'',user_id:''})).then(this.getAllGardens()).catch(function(err){return console.log(err);});}// ====== QUADRANTS FORM ======== //
-	},{key:'updateIdQuadrant',value:function updateIdQuadrant(e){var quadrant_id=Number.parseInt(e.target.value);this.setState({quad_id:quadrant_id});// console.log('updating state for quad_id ', this.state.quad_id);
-	}},{key:'updateProduceQuadrant',value:function updateProduceQuadrant(e){var prod_quadrant=Number.parseInt(e.target.value);this.setState({prod_quad:prod_quadrant});// console.log('updating state for prod_quad ', this.state.prod_quad);
-	}},{key:'updateUserQuadrant',value:function updateUserQuadrant(e){var user_quadrant=Number.parseInt(e.target.value);this.setState({user_quad:user_quadrant});// console.log('updating state for user_quad ', this.state.user_quad);
-	}// with a post method, handleFormSubmit() adds a new garden to the db
-	},{key:'handleQuadrantForm',value:function handleQuadrantForm(){// console.log('in app quad form quad Id', this.state.quad_id)
-	fetch('/db/gardens/quadrants/'+this.state.quad_id,{headers:{'Content-Type':'application/json'},method:'POST',body:JSON.stringify({quad_id:this.state.quad_id,prod_quad:this.state.prod_quad,user_quad:this.state.user_quad})}).then(this.setState({quad_id:0,prod_quad:0,user_quad:0})).then(this.getAllGardens())// .then(this.changeSelection(this.state.garden_id))
-	.catch(function(err){return console.log(err);});}//________________USERS________________
-	},{key:'updateFormSignUpUsername',value:function updateFormSignUpUsername(e){console.log(e.target.value);this.setState({signup:{username:e.target.value,password:this.state.signup.password}});}},{key:'updateFormSignUpPassword',value:function updateFormSignUpPassword(e){console.log(e.target.value);this.setState({signup:{username:this.state.signup.username,password:e.target.value}});}},{key:'updateFormLogInUsername',value:function updateFormLogInUsername(e){this.setState({login:{username:e.target.value,password:this.state.login.password}});}},{key:'updateFormLogInPassword',value:function updateFormLogInPassword(e){this.setState({login:{username:this.state.login.username,password:e.target.value}});}},{key:'handleSignUp',value:function handleSignUp(){fetch('/users',{headers:{'Content-Type':'application/json'},method:'POST',body:JSON.stringify({username:this.state.signup.username,password:this.state.signup.password})}).then(this.setState({signup:{username:'',password:''}})).then(this.alertInfo('You have signed up!')).catch(function(err){return console.log(err);});}},{key:'handleLogIn',value:function handleLogIn(){console.log('test');fetch('/auth',{headers:{'Content-Type':'application/json'},method:'POST',body:JSON.stringify({username:this.state.login.username,password:this.state.login.password})}).then(console.log(this.state.login.username)).then(this.setState({login:{username:'',password:''}})).then(this.onSuccessfulLogIn).catch(function(err){return console.log(err);});}},{key:'onSuccessfulLogIn',value:function onSuccessfulLogIn(a,b){console.log(a,b);}// changes the state of a quadrant when it has been clicked on
-	// activateQuadrant(e) {
-	//   this.setState({
-	//     q1: true,
-	//     q2: true,
-	//   })
-	//   console.log('q1 is active ', this.state.q1);
-	//   console.log('q2 is active ', this.state.q2);
-	// }
-	},{key:'render',value:function render(){var _this4=this;return _react2.default.createElement('div',null,_react2.default.createElement('header',null,_react2.default.createElement('h1',null,'Welcome,',this.props.login.username)),_react2.default.createElement(_GardenForm2.default,{name:this.state.name,zipcode:this.state.zipcode,user_id:this.state.user_id,updateFormName:function updateFormName(event){return _this4.updateFormName(event);},updateFormZip:function updateFormZip(event){return _this4.updateFormZip(event);},updateFormId:function updateFormId(event){return _this4.updateFormId(event);},handleFormSubmit:function handleFormSubmit(event){return _this4.handleFormSubmit();},getLastGardenId:function getLastGardenId(event){return _this4.getLastGardenId(event);},updateFormGardenId:function updateFormGardenId(event){return _this4.updateFormGardenId(event);},garden_id:this.state.garden_id}),_react2.default.createElement('div',{className:'gardenlist'},_react2.default.createElement(_GardenList2.default,{getAllGardens:this.getAllGardens.bind(this),collection:this.state.gardens,changeSelection:this.changeSelection.bind(this)})),_react2.default.createElement('div',{className:'gardenDisplay'},_react2.default.createElement(_GardenDisplay2.default,{garden:this.state.selected,garden_id:this.state.garden_id,collection:this.state.quadrants,quadrants:this.state.quadrants,quad_id:this.state.quad_id,prod_quad:this.state.prod_quad,user_quad:this.state.user_quad,updateIdQuadrant:function updateIdQuadrant(event){return _this4.updateIdQuadrant(event);},updateProduceQuadrant:function updateProduceQuadrant(event){return _this4.updateProduceQuadrant(event);},updateUserQuadrant:function updateUserQuadrant(event){return _this4.updateUserQuadrant(event);},handleQuadrantForm:function handleQuadrantForm(event){return _this4.handleQuadrantForm();}// activateQuadrant={event => this.activateQuadrant(event)}
-	// q1={this.state.q1}
-	// q2={this.state.q2}
-	})),_react2.default.createElement('footer',null,_react2.default.createElement('div',{className:'team'},_react2.default.createElement('h3',null,'Meat The Team '),_react2.default.createElement('ul',null,_react2.default.createElement('img',{src:'../Images/s.png'})))));}}]);return App;}(_react.Component);exports.default=App;
 
 /***/ }
 /******/ ]);

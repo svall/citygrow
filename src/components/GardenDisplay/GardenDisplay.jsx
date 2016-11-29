@@ -9,23 +9,22 @@ class GardenDisplay extends Component {
   showQuadrants(quadrants) {
     // console.log('in gard disp', this.props.quadrants);
     return this.props.quadrants.map((quadrants, i) =>
-        <GardenDisplayItem
-          key={i}
-          name={quadrants.name}
-          user={quadrants.user}
-          produce={quadrants.produce}
-          quadrants={quadrants.quadrant}
-          q1={i}
+      <GardenDisplayItem
+        key={i}
+        name={quadrants.name}
+        user={quadrants.user}
+        produce={quadrants.produce}
+        quadrants={quadrants.quadrant}
+        q1={i}
 
-          updateIdQuadrant={this.props.updateIdQuadrant}
-          updateProduceQuadrant={this.props.updateProduceQuadrant}
-          updateUserQuadrant={this.props.updateUserQuadrant}
-          handleQuadrantForm={this.props.handleQuadrantForm}
-          quad_id={this.props.quad_id}
-          prod_quad={this.props.prod_quad}
-          user_quad={this.props.user_quad}
-          // q2={this.props.q2}
-        />
+        updateIdQuadrant={this.props.updateIdQuadrant}
+        updateProduceQuadrant={this.props.updateProduceQuadrant}
+        updateUserQuadrant={this.props.updateUserQuadrant}
+        handleQuadrantForm={this.props.handleQuadrantForm}
+        quad_id={this.props.quad_id}
+        prod_quad={this.props.prod_quad}
+        user_quad={this.props.user_quad}
+      />
     );
   }
 
@@ -37,11 +36,9 @@ class GardenDisplay extends Component {
           zipcode={this.props.garden.zipcode}
           garden_id={this.props.garden_id}
         />
-
         <div className="quadrant-container">
          {this.showQuadrants(this.props.quadrants)}
         </div>
-
       </div>
     );
   }
