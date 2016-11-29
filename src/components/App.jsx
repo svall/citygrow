@@ -36,7 +36,8 @@ class App extends Component {
       login: {
         loggedIn: false,
         username: '',
-        password: ''
+        password: '',
+        id: ''
       }
     };
     // this.updateIdQuadrant = this.updateIdQuadrant.bind(this);
@@ -119,11 +120,13 @@ class App extends Component {
       this.setState({
       login: {
         username: data.name,
-        password: data.password
+        password: data.password,
+        loggedIn: True,
+        id: data.id
       }
 
     })})
-    .then(console.log(this.state.login.username))
+    .then(console.log(this.state.login.id))
     .then(console.log('succesful login'))
     .catch(err => console.log(err));
   }
