@@ -258,67 +258,8 @@ class App extends Component {
   render(){
     return (
       <div>
-<<<<<<< HEAD
-         <header>
-         <h1>Welcome,{this.props.login.username}</h1>
-
-       </header>
-
-
-
-
-
-      <GardenForm
-        name={this.state.name}
-        zipcode={this.state.zipcode}
-        user_id={this.state.user_id}
-        updateFormName={event => this.updateFormName(event)}
-        updateFormZip={event => this.updateFormZip(event)}
-        updateFormId={event => this.updateFormId(event)}
-        handleFormSubmit={event => this.handleFormSubmit()}
-        getLastGardenId={event => this.getLastGardenId(event)}
-        updateFormGardenId={event => this.updateFormGardenId(event)}
-        garden_id={this.state.garden_id}
-
-      />
-    <div className="gardenlist">
-      <GardenList
-        getAllGardens={this.getAllGardens.bind(this)}
-        collection={this.state.gardens}
-        changeSelection={this.changeSelection.bind(this)}
-      />
-    </div>
-    <div className="gardenDisplay">
-      <GardenDisplay
-        garden={this.state.selected}
-        garden_id={this.state.garden_id}
-        collection={this.state.quadrants}
-        quadrants={this.state.quadrants}
-
-        quad_id={this.state.quad_id}
-        prod_quad={this.state.prod_quad}
-        user_quad={this.state.user_quad}
-        updateIdQuadrant={event => this.updateIdQuadrant(event)}
-        updateProduceQuadrant={event => this.updateProduceQuadrant(event)}
-        updateUserQuadrant={event => this.updateUserQuadrant(event)}
-        handleQuadrantForm={event => this.handleQuadrantForm()}
-        // activateQuadrant={event => this.activateQuadrant(event)}
-        // q1={this.state.q1}
-        // q2={this.state.q2}
-      />
-    </div>
-
-       <footer>
-        <div className="team">
-        <h3>Meat The Team </h3>
-          <ul>
-            <img src={'../Images/s.png'}/>
-
-          </ul>
-=======
         <header>
-
-
+          <h1>Welcome,{this.props.login.username}</h1>
         </header>
         <GardenForm
           name={this.state.name}
@@ -355,7 +296,6 @@ class App extends Component {
             handleQuadrantForm={event => this.handleQuadrantForm()}
 
           />
->>>>>>> 6cdb7f673e303930ccd43e200053b89026612414
         </div>
         <footer>
           <div className="team">
