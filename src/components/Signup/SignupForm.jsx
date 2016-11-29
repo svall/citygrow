@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import style from './SignupForm.css';
+import { Link } from 'react-router';
 
 // create a React Component called _App_
 class SignupForm extends Component {
@@ -23,9 +24,11 @@ class SignupForm extends Component {
           value={this.props.signup.password}
           onChange={this.props.updateFormSignPassword}
         />
+        <Link to="login">
         <button onClick={this.props.handleSign}>
           SignUp!
         </button>
+        </Link>
 
       </div>
       </div>

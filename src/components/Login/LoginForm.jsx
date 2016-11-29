@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import style from './LoginForm.css';
+import { Link } from 'react-router';
 
 // create a React Component called _App_
 class LoginForm extends Component {
@@ -22,9 +23,11 @@ class LoginForm extends Component {
           value={this.props.login.password}
           onChange={this.props.updateFormLogPassword}
         />
+        <Link to="home">
         <button onClick={this.props.handleLog}>
           Log In!
         </button>
+         </Link>
       </div>
       </div>
     );

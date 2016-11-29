@@ -9,20 +9,46 @@
   position: absolute;
   min-width: 300px;
   min-height: 250px;
+  background-color: #a1f4b4;
 }
 .intro-title {
-  padding: 10px;
-  text-align: center;
-  position: relative;
-  top: 30%;
+  /*padding: 10px;*/
+/*  text-align: center;*/
+  /*position: relative;*/
+color:#898e8a;
+font-size: 60px;
 }
+
 #link-container {
   display: flex;
   flex-direction: row;
   align-content: center;
   position: relative;
-  top: 50%;
+  margin-left: 100px;
+  height: 20px;
+/*  top: 50%;*/
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*.Box{
   background-color: rgba(27,28,30,0.5);
