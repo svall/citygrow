@@ -14,6 +14,23 @@ class App extends Component {
     super();
     // console.log(this);
     this.state = {
+
+        // selectIndex:0,
+        // carasoul:[
+        //   {
+        //     url:'https://s-media-cache-ak0.pinimg.com/originals/fb/fc/f2/fbfcf203ebcf935868874053d2b039e9.jpg'
+        //   },
+        //   {
+        //     url:'https://s-media-cache-ak0.pinimg.com/originals/69/0d/4b/690d4b6dec8a56acc8f20938534fcc37.jpg'
+        //   },
+        //   {
+        //     url:'https://desertification.files.wordpress.com/2015/03/new-york-riverpark-urban-farm2.jpg?w=825&h=366&crop=1'
+        //   },
+        //   {
+        //     url:'http://cdn.c.photoshelter.com/img-get2/I0000Lp2j72KRjwA/fit=1000x750/Roof-garden-LB1008-8803.jpg'
+        //   },
+        // ],
+
       gardens: [],
       selected: '',
       garden_id: '',
@@ -41,6 +58,33 @@ class App extends Component {
     };
     // this.updateIdQuadrant = this.updateIdQuadrant.bind(this);
   }
+
+
+  //______________Welcome Functions___________
+
+// componentWillMount(){
+//   this.onReaload()
+//   this.changingBall()
+// }
+// componentWillUnMount(){
+//  clearInterval(this.state.intervalRef)
+// }
+// changingBall(){
+// const ref = setInterval(()=> {
+//    this.onReaload()
+// },700);
+//  this.setState({
+//    intervalRef: ref
+//  });
+
+// }
+// onReaload(){
+//  this.setState({
+//    selectIndex:Math.floor(Math.carasoul() * this.state.carasoul.length)
+
+//  });
+// }
+
 
 
   //________________USERS________________
@@ -133,6 +177,7 @@ class App extends Component {
   render(){
     return (
       <div>
+      <div>
 
         {this.props.children && React.cloneElement(this.props.children, {
           state: 'test',
@@ -146,6 +191,10 @@ class App extends Component {
           handleLog:()=> this.handleLogIn()
         })}
       </div>
+
+
+    </div>
+
     );
   }
 }

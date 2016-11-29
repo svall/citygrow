@@ -274,7 +274,7 @@ class App extends Component {
     return (
       <div>
          <header>
-
+         <h1>Welcome, {this.props.username}</h1>
 
        </header>
 
