@@ -19,16 +19,13 @@ class App extends Component {
       garden_id: '',
       name: '',
       zipcode: '',
-      // user_id: '',
-      // produce: 0,
-      // user: 0,
 
+      quadrants: [],
+      q1: 0,
       quad_id: 0,
       prod_quad: 0,
       user_quad: 0,
 
-      quadrants: [],
-      q1: false,
       signup: {
         username: '',
         password: ''
@@ -39,7 +36,6 @@ class App extends Component {
         password: ''
       }
     };
-    // this.updateIdQuadrant = this.updateIdQuadrant.bind(this);
   }
 
   // ====== GET ALL GARDENS AND GET GARDEN BY ID ======== //
@@ -168,7 +164,6 @@ class App extends Component {
         user_quad: 0
     }))
     .then(this.getAllGardens())
-    // .then(this.changeSelection(this.state.garden_id))
     .catch(err => console.log(err));
   }
 
@@ -260,78 +255,58 @@ class App extends Component {
     console.log(a,b);
   }
 
-  // changes the state of a quadrant when it has been clicked on
-  // activateQuadrant(e) {
-  //   this.setState({
-  //     q1: true,
-  //     q2: true,
-  //   })
-  //   console.log('q1 is active ', this.state.q1);
-  //   console.log('q2 is active ', this.state.q2);
-  // }
-
   render(){
     return (
       <div>
-         <header>
+        <header>
 
 
-       </header>
+        </header>
+        <GardenForm
+          name={this.state.name}
+          zipcode={this.state.zipcode}
+          user_id={this.state.user_id}
+          updateFormName={event => this.updateFormName(event)}
+          updateFormZip={event => this.updateFormZip(event)}
+          updateFormId={event => this.updateFormId(event)}
+          handleFormSubmit={event => this.handleFormSubmit()}
+          getLastGardenId={event => this.getLastGardenId(event)}
+          updateFormGardenId={event => this.updateFormGardenId(event)}
+          garden_id={this.state.garden_id}
 
-
-
-
-
-      <GardenForm
-        name={this.state.name}
-        zipcode={this.state.zipcode}
-        user_id={this.state.user_id}
-        updateFormName={event => this.updateFormName(event)}
-        updateFormZip={event => this.updateFormZip(event)}
-        updateFormId={event => this.updateFormId(event)}
-        handleFormSubmit={event => this.handleFormSubmit()}
-        getLastGardenId={event => this.getLastGardenId(event)}
-        updateFormGardenId={event => this.updateFormGardenId(event)}
-        garden_id={this.state.garden_id}
-
-      />
-    <div className="gardenlist">
-      <GardenList
-        getAllGardens={this.getAllGardens.bind(this)}
-        collection={this.state.gardens}
-        changeSelection={this.changeSelection.bind(this)}
-      />
-    </div>
-    <div className="gardenDisplay">
-      <GardenDisplay
-        garden={this.state.selected}
-        garden_id={this.state.garden_id}
-        collection={this.state.quadrants}
-        quadrants={this.state.quadrants}
-
-        quad_id={this.state.quad_id}
-        prod_quad={this.state.prod_quad}
-        user_quad={this.state.user_quad}
-        updateIdQuadrant={event => this.updateIdQuadrant(event)}
-        updateProduceQuadrant={event => this.updateProduceQuadrant(event)}
-        updateUserQuadrant={event => this.updateUserQuadrant(event)}
-        handleQuadrantForm={event => this.handleQuadrantForm()}
-        // activateQuadrant={event => this.activateQuadrant(event)}
-        // q1={this.state.q1}
-        // q2={this.state.q2}
-      />
-    </div>
-
-       <footer>
-        <div className="team">
-        <h3>Meat The Team </h3>
-          <ul>
-            <img src={'../Images/s.png'}/>
-
-          </ul>
+        />
+        <div className="gardenlist">
+          <GardenList
+            getAllGardens={this.getAllGardens.bind(this)}
+            collection={this.state.gardens}
+            changeSelection={this.changeSelection.bind(this)}
+          />
         </div>
-   </footer>
- </div>
+        <div className="gardenDisplay">
+          <GardenDisplay
+            garden={this.state.selected}
+            garden_id={this.state.garden_id}
+            collection={this.state.quadrants}
+            quadrants={this.state.quadrants}
+            quad_id={this.state.quad_id}
+            prod_quad={this.state.prod_quad}
+            user_quad={this.state.user_quad}
+            updateIdQuadrant={event => this.updateIdQuadrant(event)}
+            updateProduceQuadrant={event => this.updateProduceQuadrant(event)}
+            updateUserQuadrant={event => this.updateUserQuadrant(event)}
+            handleQuadrantForm={event => this.handleQuadrantForm()}
+
+          />
+        </div>
+        <footer>
+          <div className="team">
+            <h3>Meat The Team </h3>
+              <ul>
+                <img src={'../Images/s.png'}/>
+            </ul>
+          </div>
+        </footer>
+      </div>
     );
   }
 }
