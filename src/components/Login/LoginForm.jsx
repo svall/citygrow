@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import style from './LoginForm.css';
 import { Link } from 'react-router';
 
-// create a React Component called _App_
+// rafa code
 class LoginForm extends Component {
 
 
