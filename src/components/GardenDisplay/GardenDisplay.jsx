@@ -5,7 +5,8 @@ import GardenDisplayItemHead from '../GardenDisplayItemHead/GardenDisplayItemHea
 
 class GardenDisplay extends Component {
 
-  // maps throught the quadrants array saved in "quadrants" state, then passes to GardenDisplayItem the data for each quadrant
+ /* showQuadrants() maps throught the quadrants array saved in "quadrants" state,
+ then passes to GardenDisplayItem the data for each quadrant*/
   showQuadrants(quadrants) {
     // console.log('in gard disp', this.props.quadrants);
     return this.props.quadrants.map((quadrants, i) =>

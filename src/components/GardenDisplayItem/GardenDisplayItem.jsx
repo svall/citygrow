@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import './GardenDisplayItem.css';
-
+ // adds style to the button on click
 const divStyle = {
   color: '#7f0000',
   fontWeight: 'bold',
   backgroundColor: 'lightyellow',
 };
 
+ // GardenDisplayItem sets up the structure for each quadrant to be displayed
 class GardenDisplayItem extends Component {
   render() {
     return(

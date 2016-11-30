@@ -216,9 +216,9 @@ class App extends Component {
 // }
 
 
-
+ //rafa code from LE puppies
   //________________USERS________________
-
+ //handles and updates all changes in the input field for sign up and
   updateFormSignUpUsername(e) {
     console.log(e.target.value);
     this.setState({
@@ -228,7 +228,7 @@ class App extends Component {
       }
     });
   }
-
+ //handles updates for all changes in the input field
   updateFormSignUpPassword(e) {
     console.log(e.target.value);
     this.setState({
@@ -238,7 +238,7 @@ class App extends Component {
       }
     });
   }
-
+  //handles changes for the username login field
   updateFormLogInUsername(e) {
     console.log(e.target.value);
     this.setState({
@@ -248,7 +248,7 @@ class App extends Component {
       }
     });
   }
-
+  //handles all changes for the login password field
   updateFormLogInPassword(e) {
     console.log(e.target.value);
     this.setState({
@@ -258,7 +258,7 @@ class App extends Component {
       }
     });
   }
-
+ //posts new user credentials to the DB via fetch
   handleSignUp() {
     fetch('/db/gardens/users', {
       headers: {
@@ -275,7 +275,7 @@ class App extends Component {
     .then(() => console.log('You have signed up!'))
     .catch(err => console.log(err));
   }
-
+ //fetches credentials which undergoes authentication before coming over.
   handleLogIn() {
     console.log('test');
     fetch('/auth', {
@@ -302,12 +302,13 @@ class App extends Component {
     .then(console.log('succesful login'))
     .catch(err => console.log(err));
   }
-
+ //when login is a success
   onSuccessfulLogIn(a,b) {
     console.log(a,b);
   }
 
-
+ /*this.props.children passes the included items as state for all child functions
+  kind of inefficient but we needed to pass state to unrendered components on separate routes*/
   render(){
     return (
       <div>
