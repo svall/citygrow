@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './GardenDisplayItem.css';
- // adds style to the button on click
+
+// adds style to the button on click
+// Attribution - Inline styling React: https://facebook.github.io/react/docs/dom-elements.html
 const divStyle = {
   color: '#7f0000',
   fontWeight: 'bold',
