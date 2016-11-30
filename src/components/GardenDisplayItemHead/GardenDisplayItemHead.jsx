@@ -5,6 +5,7 @@ const divStyle = {
   color: 'red',
 };
 
+ // displays the specific information for the garden selected
 const GardenDisplayItemHead = props => (
 
     <div className="garden-data">

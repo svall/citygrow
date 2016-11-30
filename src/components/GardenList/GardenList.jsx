@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import "./GardenList.css";
 import GardenListItem from '../GardenListItem/GardenListItem.jsx';
-
+ // similar to firehouse lab, is a list component for all gardens
 class GardenList extends Component {
 
   showGardens(collection) {
@@ -16,7 +16,7 @@ class GardenList extends Component {
      </article>
     );
   }
-
+  //populates list with gardens
   componentWillMount() {
     this.props.getAllGardens();
   }

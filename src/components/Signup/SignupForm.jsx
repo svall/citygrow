@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import style from './SignupForm.css';
 import { Link } from 'react-router';
 
-// create a React Component called _App_
+// rafa code
 class SignupForm extends Component {
 
 
